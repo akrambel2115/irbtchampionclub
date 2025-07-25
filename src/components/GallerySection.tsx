@@ -13,14 +13,14 @@ const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const galleryImages = [
-    { id: 1, src: "../../public/images/pic1.jpg" },
-    { id: 2, src: "../../public/images/pic2.jpg" },
-    { id: 3, src: "../../public/images/pic3.jpg" },
-    { id: 4, src: "../../public/images/pic6.jpg" },
-    { id: 5, src: "../../public/images/pic7.jpg" },
-    { id: 6, src: "../../public/images/pic8.jpg" },
-    { id: 7, src: "../../public/images/pic9.jpg" },
-    { id: 8, src: "../../public/images/pic10.jpg" },
+    { id: 1, src: "/images/pic1.jpg" },
+    { id: 2, src: "/images/pic2.jpg" },
+    { id: 3, src: "/images/pic3.jpg" },
+    { id: 4, src: "/images/pic6.jpg" },
+    { id: 5, src: "/images/pic7.jpg" },
+    { id: 6, src: "/images/pic8.jpg" },
+    { id: 7, src: "/images/pic9.jpg" },
+    { id: 8, src: "/images/pic10.jpg" },
   ];
 
   // Advanced Orbital Gallery Component
