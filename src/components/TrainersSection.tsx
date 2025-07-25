@@ -20,7 +20,7 @@ const TrainersSection = () => {
       title: t("trainer.title"),
       experience: "5 " + t("trainers.experience"),
       image:
-        "../../public/images/oussama.jpg",
+        "/images/oussama.jpg",
       achievements: [
         t("trainer.achievement1"),
         t("trainer.achievement2"),
