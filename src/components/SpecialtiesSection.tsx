@@ -42,7 +42,7 @@ const SpecialtiesSection = () => {
       ],
       forMen: true,
       forWomen: true,
-      image: "/images/boxing.jpg",
+      image: "/images/boxing.webp",
     },
     {
       title: t("specialty.kickboxing.title"),
@@ -56,7 +56,7 @@ const SpecialtiesSection = () => {
       ],
       forMen: true,
       forWomen: true,
-      image: "/images/kick.jpg",
+      image: "/images/kick.webp",
     },
     {
       title: t("specialty.muayThai.title"),
@@ -70,7 +70,7 @@ const SpecialtiesSection = () => {
       ],
       forMen: true,
       forWomen: true,
-      image: "/images/muaythai.jpg",
+      image: "/images/muaythai.webp",
     },
     {
       title: t("specialty.gym.title"),
@@ -84,7 +84,7 @@ const SpecialtiesSection = () => {
       ],
       forMen: true,
       forWomen: true,
-      image: "/images/gym.jpg",
+      image: "/images/gym.webp",
     },
     {
       title: t("specialty.mma.title"),
@@ -98,7 +98,7 @@ const SpecialtiesSection = () => {
       ],
       forMen: true,
       forWomen: true,
-      image: "/images/mma.jpg",
+      image: "/images/mma.webp",
     },
     {
       title: t("specialty.fitness.title"),
@@ -112,7 +112,7 @@ const SpecialtiesSection = () => {
       ],
       forMen: true,
       forWomen: true,
-      image: "/images/fitness.jpg",
+      image: "/images/fitness.webp",
     },
   ], [t]);
 
@@ -191,18 +191,18 @@ const SpecialtiesSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.1,
       },
     },
   }), []);
 
   const cardVariants = useMemo(() => ({
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 50, willChange: 'opacity, transform' },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
       },
     },
   }), []);
@@ -232,6 +232,8 @@ const SpecialtiesSection = () => {
             alt={specialty.title}
             className="w-full h-full object-cover"
             loading="lazy"
+            width={350}
+            height={200}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
           <div className="absolute top-4 left-4 bg-gradient-red-gold rounded-full p-3">
@@ -383,7 +385,7 @@ const SpecialtiesSection = () => {
   return (
     <section
       id="specialties"
-      className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden"
+      className="py-10 md:py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden"
     >
       {/* Background Elements - Static to avoid repaints */}
       <div className="absolute inset-0 boxing-pattern opacity-10"></div>
@@ -498,9 +500,9 @@ const SpecialtiesSection = () => {
         </motion.div>
 
         {/* Stack animation for specialties */}
-        <div className="py-12 flex justify-center">
+        <div className="py-6 md:py-12 flex justify-center">
           <Stack
-            cardDimensions={{ width: 350, height: 520 }}
+            cardDimensions={{ width: 300, height: 480 }}
             cardsData={specialtiesWithIds}
             renderCard={renderCard}
           />
