@@ -24,7 +24,7 @@ const HeroSection = () => {
       {/* Mobile Logo - absolutely at the top, centered, only on mobile */}
       <div className="block md:hidden absolute left-1/2 top-0 -translate-x-1/2 z-30 w-full flex justify-center pointer-events-none">
         <img
-          src="/public/logo.png"
+          src="/images/logo.png"
           alt="IRBT Champion Club Logo"
           className={`drop-shadow-lg ${isArabic ? "h-[70vw]" : "h-[60vw]"} w-auto`}
           style={{ maxWidth: '80vw' }}
