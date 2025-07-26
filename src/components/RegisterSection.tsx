@@ -80,37 +80,39 @@ const RegisterSection = () => {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    setIsSubmitting(true);
-    
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyhQ1ub06a0_dD2xFR-AQCKDi6nqnY26nZDrDFWMrYye1um5oRiayngRQKJ-tSxmu74Fg/execa', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...values,
-          submissionDate: new Date().toISOString(),
-        }),
-      });
-      
-      const result = await response.json();
-      
-      if (result.success) {
-        toast.success(t('register.success'), { description: t('register.successDescription') });
-        form.reset();
-      } else {
-        throw new Error(result.message || 'Submission failed');
-      }
-    } catch (error) {
-      console.error('Form submission error:', error);
-      toast.error('Registration failed', { description: 'Please try again later.' });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
+const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  setIsSubmitting(true);
+  
+  try {
+    // Convert the data to URL-encoded format instead of JSON
+    const formData = new URLSearchParams();
+    Object.entries(values).forEach(([key, value]) => {
+      formData.append(key, value.toString());
+    });
+    formData.append('submissionDate', new Date().toISOString());
+
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxSVng54awgOh3Qw_6k75y-hjDRc8_BWGuWUKE36FvCABPn-TomcnvQAkrLkoCyIYslFg/exec', {
+      method: 'POST',
+      // Remove the Content-Type header - let the browser set it
+      body: formData,
+    });
+    
+    const result = await response.json();
+    
+    if (result.success) {
+      toast.success(t('register.success'), { description: t('register.successDescription') });
+      form.reset();
+    } else {
+      throw new Error(result.message || 'Submission failed');
+    }
+  } catch (error) {
+    console.error('Form submission error:', error);
+    toast.error('Registration failed', { description: 'Please try again later.' });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <section id="register-section" className="py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
       {/* Background Elements */}
