@@ -9,7 +9,7 @@ const LanguageSwitcher = ({ isMobile = false }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const languages = [
-    { code: 'ar', name: 'العربية', flag: 'dz' },
+    { code: 'ar', name: 'العربية', flag: '🇩🇿' },
     { code: 'en', name: 'English', flag: '🇺🇸' },
   ];
 
