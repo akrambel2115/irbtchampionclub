@@ -531,10 +531,10 @@ i18n
       escapeValue: false,
     },
     detection: {
-      order: ['localStorage', 'htmlTag', 'navigator'],
-      lookupLocalStorage: 'i18nextLng',
-      // If no language is set, fallbackLng: 'ar' ensures Arabic loads first
-      caches: ['localStorage'],
+      order: ['htmlTag', 'navigator'],
+      // Removed localStorage from detection order to force Arabic as default for new users
+      // fallbackLng: 'ar' ensures Arabic loads first
+      caches: [],
     },
   });
 
