@@ -150,6 +150,7 @@ const resources = {
       'register.dateOfBirth': 'تاريخ الميلاد',
       'register.gender': 'الجنس',
       'register.bloodType': 'فصيلة الدم',
+      'register.submitting': 'يتم التسجيل...',
       
       // Form placeholders
       'placeholder.experience': 'أدخل مستوى الخبرة',
@@ -164,8 +165,24 @@ const resources = {
       'placeholder.bloodType': 'أختر فصيلة الدم',
       'placeholder.specialty': 'أختر التخصص المفضل',
       
+      // Error Pages
+      // Error Pages
+      'error.404.title': '404',
+      'error.404.heading': 'الصفحة غير موجودة',
+      'error.404.description': 'الصفحة التي تبحث عنها غير موجودة أو ربما تم نقلها.',
+      'error.404.home': 'العودة للرئيسية',
+      'error.404.back': 'الرجوع',
+      'error.500.title': '500',
+      'error.500.heading': 'خطأ في الخادم',
+      'error.500.description': 'حدث خطأ غير متوقع في الخادم. يرجى المحاولة لاحقاً.',
+      'error.500.home': 'العودة للرئيسية',
+      'error.403.title': '403',
+      'error.403.heading': 'غير مصرح',
+      'error.403.description': 'ليس لديك صلاحية الوصول إلى هذه الصفحة.',
+      'error.403.home': 'العودة للرئيسية',
+      'error.403.back': 'الرجوع',
       // Footer
-      'footer.description': 'نادي النخبة للقتال يقدم تدريبًا احترافيًا في الفنون القتالية واللياقة. انضم إلى مجتمع من المحاربين.',
+      'footer.description': 'تدريب احترافي في الفنون القتالية واللياقة. انضم إلى مجتمع من المحاربين.',
       'footer.quickLinks': 'روابط سريعة',
       'footer.trainingPrograms': 'برامج التدريب',
       'footer.trainingHours': 'ساعات التدريب',
@@ -199,6 +216,22 @@ const resources = {
       'experience.intermediate': 'متوسط (3-5 سنوات)',
       'experience.advanced': 'متقدم (5+ سنوات)',
       'experience.professional': 'محترف/تنافسي',
+
+      // Validations
+      'validation.firstName.min': 'مطلوب 3 حروف على الأقل',
+      'validation.lastName.min': 'مطلوب 3 حروف على الأقل',
+      'validation.placeOfBirth.min': 'مطلوب 3 حروف على الأقل',
+      'validation.age.range': 'العمر غير مناسب',
+      'validation.address.min': 'مطلوب 10 حروف على الأقل',
+      'validation.bloodType.min': 'هذا الحقل اجباري',
+      'validation.gender.min': 'هذا الحقل اجباري',
+      'validation.emergencyContact.min': 'مطلوب 10 أرقام',
+      'validation.specialty.min': 'هذا الحقل اجباري',
+      'validation.experience.min': 'هذا الحقل اجباري',
+      '': '',
+      '': '',
+      '': '',
+      'validation.phoneNumber.min': 'مطلوب 10 أرقام',
     }
   },
    en: {
@@ -361,6 +394,22 @@ const resources = {
       'placeholder.bloodType': 'Select your blood type',
       'placeholder.specialty': 'Select your preferred specialty',
 
+      // Error Pages
+      // Error Pages
+      'error.404.title': '404',
+      'error.404.heading': 'Page Not Found',
+      'error.404.description': "The page you're looking for doesn't exist or may have been moved.",
+      'error.404.home': 'Return Home',
+      'error.404.back': 'Go Back',
+      'error.500.title': '500',
+      'error.500.heading': 'Server Error',
+      'error.500.description': 'An unexpected server error occurred. Please try again later.',
+      'error.500.home': 'Return Home',
+      'error.403.title': '403',
+      'error.403.heading': 'Unauthorized',
+      'error.403.description': 'You do not have permission to access this page.',
+      'error.403.home': 'Return Home',
+      'error.403.back': 'Go Back',
       // Footer
       'footer.description': 'IRBT Champion Club offers professional training in martial arts and fitness. Join a passionate community of fighters.',
       'footer.quickLinks': 'Quick Links',
@@ -412,7 +461,9 @@ i18n
       escapeValue: false,
     },
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      order: ['localStorage', 'htmlTag', 'navigator'],
+      lookupLocalStorage: 'i18nextLng',
+      // If no language is set, fallbackLng: 'ar' ensures Arabic loads first
       caches: ['localStorage'],
     },
   });
