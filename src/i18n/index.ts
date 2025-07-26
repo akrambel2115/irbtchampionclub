@@ -1,3 +1,7 @@
+if (typeof document !== 'undefined') {
+  document.documentElement.lang = 'ar';
+  document.documentElement.dir = 'rtl';
+}
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -531,10 +535,9 @@ i18n
       escapeValue: false,
     },
     detection: {
-      order: ['htmlTag', 'navigator'],
-      // Removed localStorage from detection order to force Arabic as default for new users
-      // fallbackLng: 'ar' ensures Arabic loads first
-      caches: [],
+      order: ['localStorage', 'htmlTag'],
+      lookupLocalStorage: 'i18nextLng',
+      caches: ['localStorage'],
     },
   });
 
