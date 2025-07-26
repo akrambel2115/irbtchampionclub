@@ -92,7 +92,7 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
     });
     formData.append('submissionDate', new Date().toISOString());
 
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxSVng54awgOh3Qw_6k75y-hjDRc8_BWGuWUKE36FvCABPn-TomcnvQAkrLkoCyIYslFg/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbwfqjK2Lb84SmbZWxtyA7ilT61d267owJV128rCYmojUVRRlV1AhJttVy2AaXxgpC9zsw/exec', {
       method: 'POST',
       // Remove the Content-Type header - let the browser set it
       body: formData,
