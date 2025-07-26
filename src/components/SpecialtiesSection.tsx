@@ -48,7 +48,7 @@ const SpecialtiesSection = () => {
       forMen: true,
       forWomen: true,
       image:
-        "https://plus.unsplash.com/premium_photo-1661670375071-b7caea0b81ee",
+        "/images/boxing.jpg",
     },
     {
       title: t("specialty.kickboxing.title"),
@@ -62,7 +62,7 @@ const SpecialtiesSection = () => {
       ],
       forMen: true,
       forWomen: true,
-      image: "https://images.unsplash.com/photo-1611077479643-5b3c01381f9e",
+      image: "/images/kick.jpg",
     },
     {
       title: t("specialty.muayThai.title"),
@@ -76,7 +76,7 @@ const SpecialtiesSection = () => {
       ],
       forMen: true,
       forWomen: true,
-      image: "https://images.unsplash.com/photo-1637974013743-82656f7c3f49",
+      image: "/images/muaythai.jpg",
     },
     {
       title: t("specialty.gym.title"),
@@ -90,7 +90,7 @@ const SpecialtiesSection = () => {
       ],
       forMen: true,
       forWomen: true,
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+      image: "/images/gym.jpg",
     },
     {
       title: t("specialty.mma.title"),
@@ -105,7 +105,7 @@ const SpecialtiesSection = () => {
       forMen: true,
       forWomen: true,
       image:
-        "https://images.unsplash.com/photo-1615117950029-db3cf44bdefa",
+        "/images/mma.jpg",
     },
     {
       title: t("specialty.fitness.title"),
@@ -119,7 +119,7 @@ const SpecialtiesSection = () => {
       ],
       forMen: true,
       forWomen: true,
-      image: "https://images.unsplash.com/photo-1676996238280-49484aff1db6",
+      image: "/images/mma.jpg",
     },
   ];
 
