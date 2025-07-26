@@ -43,14 +43,14 @@ const RegisterSection = () => {
   ];
 
   const formSchema = z.object({
-    firstName: z.string().min(2, t('validation.firstName.min')),
-    lastName: z.string().min(2, t('validation.lastName.min')),
-    placeOfBirth: z.string().min(2, t('validation.placeOfBirth.min')),
+    firstName: z.string().min(3, t('validation.firstName.min')),
+    lastName: z.string().min(3, t('validation.lastName.min')),
+    placeOfBirth: z.string().min(3, t('validation.placeOfBirth.min')),
     dateOfBirth: z.string().refine((date) => {
       const birthDate = new Date(date);
       const today = new Date();
       const age = today.getFullYear() - birthDate.getFullYear();
-      return age >= 16 && age <= 80;
+      return age >= 3.5 && age <= 80;
     }, t('validation.age.range')),
     phoneNumber: z.string().min(10, t('validation.phoneNumber.min')),
     address: z.string().min(10, t('validation.address.min')),
@@ -108,7 +108,7 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
     }
   } catch (error) {
     console.error('Form submission error:', error);
-    toast.error('Registration failed', { description: 'Please try again later.' });
+    toast.error('فشل التسجيل', { description: 'يرجى المحاولة مرة أخرى لاحقًا.' });
   } finally {
     setIsSubmitting(false);
   }
