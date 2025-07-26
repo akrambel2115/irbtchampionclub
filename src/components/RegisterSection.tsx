@@ -84,7 +84,7 @@ const RegisterSection = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbzBeG9TUmg7ZNknSD-qdKtDhg674nzhZgzshkv_-dL9LhiiOpmPmML_a7WEQCLsEH2i3g/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyhQ1ub06a0_dD2xFR-AQCKDi6nqnY26nZDrDFWMrYye1um5oRiayngRQKJ-tSxmu74Fg/execa', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
