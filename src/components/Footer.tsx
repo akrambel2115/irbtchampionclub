@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Dumbbell,
@@ -8,8 +9,6 @@ import {
   Clock,
   Facebook,
   Instagram,
-  Twitter,
-  Youtube,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -43,10 +42,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", name: "Facebook" },
-    { icon: Instagram, href: "#", name: "Instagram" },
-    { icon: Twitter, href: "#", name: "Twitter" },
-    { icon: Youtube, href: "#", name: "YouTube" },
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61578160406392", name: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/irbt_champion_club/", name: "Instagram" },
   ];
 
   return (
@@ -211,7 +208,7 @@ const Footer = () => {
               <span className="text-red-600">❤️</span>
               <span>{t("footer.by")}</span>
               <a
-                href="#"
+                href="https://www.instagram.com/divnest/"
                 className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200 font-semibold"
               >
                 Divnest
@@ -219,18 +216,18 @@ const Footer = () => {
             </div>
 
             <div className="flex space-x-6 text-sm">
-              <a
-                href="#"
+              <Link
+                to="/PrivacyPolicy"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
               >
                 {t("footer.privacyPolicy")}
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/TermsAndConditions"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
               >
                 {t("footer.terms")}
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>
