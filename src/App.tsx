@@ -8,7 +8,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import ClickSpark from "@/blocks/Animations/ClickSpark/ClickSpark";
 
 const queryClient = new QueryClient();
 
@@ -24,13 +23,6 @@ const App = () => {
   }, [i18n.language]);
 
   return (
-    <ClickSpark
-      sparkColor="#fff"
-      sparkSize={10}
-      sparkRadius={15}
-      sparkCount={8}
-      duration={400}
-    >
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
@@ -44,7 +36,6 @@ const App = () => {
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
-    </ClickSpark>
   );
 };
 

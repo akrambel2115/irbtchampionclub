@@ -4,7 +4,6 @@ import { Menu, X, Dumbbell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
-import ClickSpark from '@/blocks/Animations/ClickSpark/ClickSpark';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -120,40 +119,22 @@ const Navbar = () => {
           >
             <div className={`flex flex-col space-y-3 ${i18n.language === 'ar' ? 'items-end' : 'items-start'}`}> 
               {navItems.map((item) => (
-                <ClickSpark
-                  key={item.name}
-                  sparkColor="#ff4d4d"
-                  sparkSize={8}
-                  sparkRadius={20}
-                  sparkCount={8}
-                  duration={500}
-                >
                   <button
                     onClick={() => scrollToSection(item.href)}
                     className={`text-white hover:text-red-400 transition-colors duration-200 py-2 w-full ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}
                   >
                     {item.name}
                   </button>
-                </ClickSpark>
               ))}
               <div className="flex justify-center w-full my-2">
                 <LanguageSwitcher isMobile={true} />
               </div>
-              <ClickSpark
-                sparkColor="#ffb700"
-                sparkSize={10}
-                sparkRadius={30}
-                sparkCount={12}
-                duration={600}
-                extraScale={1.2}
-              >
                 <Button
                   onClick={() => scrollToSection('#register')}
                   className="bg-gradient-red-gold w-full mt-4"
                 >
                   {t('nav.joinNow')}
                 </Button>
-              </ClickSpark>
             </div>
           </motion.div>
         )}

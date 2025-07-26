@@ -126,7 +126,7 @@ const HeroSection = () => {
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0 }}
               >
-                <CountUp end={700} suffix="+" duration={10} enableScrollSpy />
+                <CountUp end={700} suffix="+" duration={4.5} enableScrollSpy />
               </motion.div>
               <div className="text-gray-400 text-sm">{t('hero.stats.members')}</div>
             </motion.div>
@@ -154,7 +154,7 @@ const HeroSection = () => {
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 1 }}
               >
-                <CountUp end={10} duration={4.6} enableScrollSpy scrollSpyDelay={800} />
+                <CountUp end={10} duration={4.5} enableScrollSpy scrollSpyDelay={800} />
               </motion.div>
               <div className="text-gray-400 text-sm">{t('hero.stats.experience')}</div>
             </motion.div>
