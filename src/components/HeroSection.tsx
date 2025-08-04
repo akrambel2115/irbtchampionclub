@@ -35,35 +35,34 @@ const HeroSection = () => {
       <AnimatedBackground />
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 boxing-pattern opacity-20"></div>
+      <div className="absolute inset-0 boxing-pattern opacity-15"></div>
 
-      {/* Enhanced Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 border-2 border-red-600 rounded-full opacity-30 float-animation"></div>
-      <div className="absolute bottom-20 right-10 w-16 h-16 border-2 border-yellow-500 rounded-full opacity-30 float-animation" style={{animationDelay: '2s'}}></div>
-      <div className="absolute top-1/2 left-5 w-12 h-12 bg-red-600 rounded-full opacity-20 float-animation" style={{animationDelay: '4s'}}></div>
+      {/* Simplified Floating Elements */}
+      <div className="absolute top-20 left-10 w-16 h-16 border-2 border-red-600 rounded-full opacity-25 float-animation"></div>
+      <div className="absolute bottom-20 right-10 w-12 h-12 border-2 border-yellow-500 rounded-full opacity-25 float-animation" style={{animationDelay: '3s'}}></div>
 
-      {/* Additional animated elements */}
+      {/* Simplified animated elements */}
       <motion.div
-        className="absolute top-1/3 right-20 w-8 h-8 border border-yellow-500 rotate-45 opacity-40"
+        className="absolute top-1/3 right-20 w-6 h-6 border border-yellow-500 rotate-45 opacity-30"
         animate={{
-          rotate: [45, 225, 45],
-          scale: [1, 1.2, 1],
+          rotate: [45, 135, 45],
+          scale: [1, 1.1, 1],
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
           ease: "easeInOut"
         }}
       />
 
       <motion.div
-        className="absolute bottom-1/3 left-20 w-6 h-6 bg-red-600 opacity-30"
+        className="absolute bottom-1/3 left-20 w-4 h-4 bg-red-600 opacity-25"
         animate={{
-          y: [-20, 20, -20],
-          x: [-10, 10, -10],
+          y: [-15, 15, -15],
+          x: [-8, 8, -8],
         }}
         transition={{
-          duration: 6,
+          duration: 8,
           repeat: Infinity,
           ease: "easeInOut"
         }}
@@ -109,7 +108,7 @@ const HeroSection = () => {
             {t('hero.description')}
           </motion.p>
 
-          {/* Stats */}
+          {/* Stats - optimized animations */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,13 +117,13 @@ const HeroSection = () => {
           >
             <motion.div
               className="text-center"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400 }}
             >
               <motion.div
                 className="font-bebas text-3xl md:text-4xl text-red-600"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 0 }}
               >
                 <CountUp end={700} suffix="+" duration={4.5} enableScrollSpy />
               </motion.div>
@@ -132,13 +131,13 @@ const HeroSection = () => {
             </motion.div>
             <motion.div
               className="text-center"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400 }}
             >
               <motion.div
                 className="font-bebas text-3xl md:text-4xl text-yellow-500"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
               >
                 <CountUp end={3} duration={4.5} enableScrollSpy scrollSpyDelay={400} />
               </motion.div>
@@ -146,13 +145,13 @@ const HeroSection = () => {
             </motion.div>
             <motion.div
               className="text-center"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400 }}
             >
               <motion.div
                 className="font-bebas text-3xl md:text-4xl text-red-600"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 2 }}
               >
                 <CountUp end={10} duration={4.5} enableScrollSpy scrollSpyDelay={800} />
               </motion.div>
