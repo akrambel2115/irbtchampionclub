@@ -10,7 +10,7 @@ const HeroSection = () => {
   const { t } = useTranslation();
 
   const scrollToRegister = () => {
-    const element = document.querySelector('#register');
+    const element = document.querySelector('#register-section');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -153,7 +153,7 @@ const HeroSection = () => {
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 3, repeat: Infinity, delay: 2 }}
               >
-                <CountUp end={10} duration={4.5} enableScrollSpy scrollSpyDelay={800} />
+                <CountUp end={9} duration={4.5} enableScrollSpy scrollSpyDelay={800} />
               </motion.div>
               <div className="text-gray-400 text-sm">{t('hero.stats.experience')}</div>
             </motion.div>

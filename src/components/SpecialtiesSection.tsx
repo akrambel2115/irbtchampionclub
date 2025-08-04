@@ -72,6 +72,7 @@ const SpecialtiesSection = () => {
       forWomen: true,
       image: "/images/muaythai.webp",
     },
+    // Gym specialty
     {
       title: t("specialty.gym.title"),
       icon: <Shield className="h-8 w-8" />,
@@ -85,6 +86,21 @@ const SpecialtiesSection = () => {
       forMen: true,
       forWomen: true,
       image: "/images/gym.webp",
+    },
+    // Roman Wrestling specialty
+    {
+      title: t("specialty.romanWrestling.title"),
+      icon: <Shield className="h-8 w-8" />,
+      description: t("specialty.romanWrestling.description"),
+      features: [
+        t("specialty.romanWrestling.feature1"),
+        t("specialty.romanWrestling.feature2"),
+        t("specialty.romanWrestling.feature3"),
+        t("specialty.romanWrestling.feature4"),
+      ],
+      forMen: true,
+      forWomen: true,
+      image: "/images/roman-wrestling.webp",
     },
     {
       title: t("specialty.mma.title"),
@@ -101,7 +117,7 @@ const SpecialtiesSection = () => {
       image: "/images/mma.webp",
     },
     {
-      title: t("specialty.fitness.title"),
+      title: t("specialty.fitness.man.title"),
       icon: <Heart className="h-8 w-8" />,
       description: t("specialty.fitness.description"),
       features: [
@@ -113,7 +129,7 @@ const SpecialtiesSection = () => {
       forMen: true,
       forWomen: true,
       image: "/images/fitness.webp",
-    },
+    }
   ], [t]);
 
   const ageGroups = useMemo(() => [
@@ -130,7 +146,7 @@ const SpecialtiesSection = () => {
         "ملاكمة احترافية",
         "فنون قتالية",
         "تدريبات القوة",
-        "برامج اللياقة",
+        "برامج كارديو و فيزيك",
       ],
       activitiesEn: [
         "Professional Boxing",
@@ -151,8 +167,8 @@ const SpecialtiesSection = () => {
       activities: [
         "ملاكمة للسيدات",
         "فنون دفاع عن النفس",
-        "لياقة بدنية",
-        "تدريبات جماعية",
+        "لياقة بدنية نحت الجسم و رشاقة",
+        "برامج كارديو و فيزيك (أيروبيك)",
       ],
       activitiesEn: [
         "Women's Boxing",
@@ -171,10 +187,10 @@ const SpecialtiesSection = () => {
       bgColor: "bg-yellow-500/10",
       description: t("ageGroup.youngKids.description"),
       activities: [
-        "ألعاب حركية",
-        "تطوير المهارات",
-        "أنشطة ذهنية",
-        "تدريبات أساسية",
+        "ألعاب و أنشطة ذهنية",
+        "تدريبات مرونة العضلات",
+        "اكتساب الثقة بالنفس",
+        "تدريبات تقوية العظام و المفاصل",
       ],
       activitiesEn: [
         "Movement Games",
@@ -270,7 +286,7 @@ const SpecialtiesSection = () => {
               <div className="text-center mb-4">
                 <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-lg p-4 border border-purple-500/30">
                   <div className="text-white text-2xl font-bebas mb-2">
-                    2026
+                    01/06/2026
                   </div>
                   <div className="text-gray-300 text-sm mb-2">
                     نعمل على إعداد شيء مميز لكم
@@ -302,7 +318,7 @@ const SpecialtiesSection = () => {
     // Regular card design for other specialties
     return (
       <Card className="glass-morphism border-gray-800 h-full" style={{ transform: 'translateZ(0)' }}>
-      <CardContent className="px-5 pt-5 pb-0 h-full flex flex-col">
+      <CardContent className="px-5 pt-5 pb-4 h-full flex flex-col">
           {/* Header with Icon and Title */}
           <div className="text-center mb-3">
             <div className="bg-gradient-red-gold rounded-full p-2.5 w-fit mx-auto mb-2">
@@ -339,7 +355,7 @@ const SpecialtiesSection = () => {
           </div>
           
           {/* Gender Availability Badge - Reduced spacing to bottom */}
-          <div className="pt-2 border-t border-gray-700/30">
+          <div className="mt-auto pt-4 border-t border-gray-700/30">
             <div className="flex justify-center">
               <div className="bg-gradient-to-r from-red-600/20 to-yellow-600/20 rounded-full px-3 py-1.5 border border-gray-600/50">
                 <span className="text-xs text-gray-200 font-medium whitespace-nowrap">
@@ -571,7 +587,7 @@ const SpecialtiesSection = () => {
         {/* Stack animation for specialties */}
         <div className="py-6 md:py-12 flex justify-center">
           <Stack
-            cardDimensions={{ width: 260, height: 360 }}
+            cardDimensions={{ width: 260, height: 390 }}
             cardsData={specialtiesWithIds}
             renderCard={renderCard}
             sensitivity={80}

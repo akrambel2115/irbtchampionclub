@@ -25,13 +25,15 @@ const RegisterSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const bloodTypes = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+  
   const specialties = [
-    t('specialty.boxing.title'),
-    t('specialty.kickboxing.title'),
-    t('specialty.muayThai.title'),
-    t('specialty.gym.title'),
-    t('specialty.mma.title'),
-    t('specialty.fitness.title')
+    t("specialty.boxing.title"),
+    t("specialty.kickboxing.title"),
+    t("specialty.muayThai.title"),
+    t("specialty.mma.title"),
+    t("specialty.fitness.man.title"),
+    t("specialty.fitness.woman.title"),
+    t("specialty.romanWrestling.title"),
   ];
   const experienceLevels = [
     t('experience.beginner'),
@@ -145,6 +147,9 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
               <CardTitle className="font-bebas text-2xl md:text-3xl text-center text-gradient-gold">
                 {t('register.form.title')}
               </CardTitle>
+              <p className="font-bebas text-sm text-center text-gray-400 uppercase tracking-wide">
+                IRBT CHAMPION CLUB
+              </p>
             </CardHeader>
             <CardContent>
               <Form {...form}>
