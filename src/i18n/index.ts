@@ -104,11 +104,11 @@ const resources = {
       'specialty.muayThai.feature4': 'القوة العقلية',
       
       'specialty.gym.title': 'كمال الأجسام',
-      'specialty.gym.description': 'طور قوتك البدنية، بناء العضلات، واللياقة العامة بأحدث المعدات.',
-      'specialty.gym.feature1': 'تمارين الأوزان',
-      'specialty.gym.feature2': 'تمارين المقاومة',
-      'specialty.gym.feature3': 'برامج بناء العضلات',
-      'specialty.gym.feature4': 'تدريب فردي أو جماعي',
+      'specialty.gym.description': '',
+      'specialty.gym.feature1': '',
+      'specialty.gym.feature2': '',
+      'specialty.gym.feature3': '',
+      'specialty.gym.feature4': '',
       
       'specialty.mma.title': 'الفنون القتالية المختلطة',
       'specialty.mma.description': 'نظام قتالي شامل يجمع بين الضرب، المصارعة، والمواجهة الأرضية.',
