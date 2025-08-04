@@ -20,7 +20,7 @@ const GallerySection = () => {
     { id: 8, src: "/images/pic10.jpg" },
   ];
 
-  // Advanced Orbital Gallery Component (memoized and throttled)
+  // Advanced Orbital Gallery Component (optimized for performance)
   const OrbitalGallery = React.useMemo(() => {
     return function OrbitalGallery({ images, radius = 320, itemWidth = 280, itemHeight = 200 }) {
       const [time, setTime] = useState(0);
@@ -29,11 +29,11 @@ const GallerySection = () => {
       const lastUpdateRef = useRef(0);
       const totalImages = images.length;
 
-      // Throttle animation frame updates to 30fps
+      // Throttle animation frame updates to 20fps for better performance
       useEffect(() => {
         const animate = () => {
           const now = Date.now();
-          if (now - lastUpdateRef.current > 33) { // ~30fps
+          if (now - lastUpdateRef.current > 50) { // ~20fps instead of 30fps
             const elapsed = (now - startTimeRef.current) / 1000;
             setTime(elapsed);
             lastUpdateRef.current = now;
@@ -50,17 +50,18 @@ const GallerySection = () => {
 
       return (
         <div className="relative w-full h-[800px] overflow-hidden">
-          {/* Dynamic Background Particles */}
+          {/* Reduced Background Particles - from 20 to 8 */}
           <div className="absolute inset-0">
-            {[...Array(20)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-red-400 rounded-full opacity-30"
+                className="absolute w-1 h-1 bg-red-400 rounded-full opacity-25"
                 style={{
-                  left: `${20 + ((i * 3) % 60)}%`,
-                  top: `${30 + ((i * 7) % 40)}%`,
-                  animation: `float ${3 + (i % 3)}s ease-in-out infinite`,
-                  animationDelay: `${i * 0.2}s`,
+                  left: `${25 + ((i * 4) % 50)}%`,
+                  top: `${35 + ((i * 8) % 30)}%`,
+                  animation: `float ${4 + (i % 2)}s ease-in-out infinite`,
+                  animationDelay: `${i * 0.3}s`,
+                  transform: 'translateZ(0)', // Hardware acceleration
                 }}
               />
             ))}
@@ -68,87 +69,81 @@ const GallerySection = () => {
 
           {/* Main Gallery Container */}
           <div className="relative w-full h-full flex items-center justify-center">
-            {/* Central Focus Ring */}
-            <div className="absolute w-96 h-96 border border-red-500/20 rounded-full animate-pulse"></div>
-            <div
-              className="absolute w-80 h-80 border border-red-400/10 rounded-full animate-ping"
-              style={{ animationDuration: "3s" }}
-            ></div>
+            {/* Simplified Focus Ring - removed animate-ping */}
+            <div className="absolute w-80 h-80 border border-red-500/15 rounded-full animate-pulse" 
+                 style={{ transform: 'translateZ(0)' }}></div>
 
             {/* Gallery Images */}
             {images.map((image, index) => {
               const angle = (index / totalImages) * Math.PI * 2;
-              const orbitRadius = radius + Math.sin(time * 0.5 + index) * 30; // Dynamic radius
+              const orbitRadius = radius + Math.sin(time * 0.3 + index) * 20; // Reduced float amplitude
 
-              // Orbital position with floating effect
-              const x = Math.cos(angle + time * 0.1) * orbitRadius;
+              // Orbital position with simplified floating effect
+              const x = Math.cos(angle + time * 0.08) * orbitRadius; // Slower rotation
               const y =
-                Math.sin(angle + time * 0.1) * orbitRadius +
-                Math.sin(time * 2 + index * 0.5) * 15;
+                Math.sin(angle + time * 0.08) * orbitRadius +
+                Math.sin(time * 1.5 + index * 0.4) * 10; // Reduced floating
 
-              // Distance from center for scaling and effects
+              // Distance from center for scaling
               const distanceFromCenter = Math.sqrt(x * x + y * y);
-              const maxDistance = radius + 50;
+              const maxDistance = radius + 30;
               const normalizedDistance = Math.min(
                 distanceFromCenter / maxDistance,
                 1
               );
 
-              // Dynamic scaling and effects - removed focus-based variations
-              const baseScale = 0.7 + (1 - normalizedDistance) * 0.3;
+              // Simplified scaling
+              const baseScale = 0.75 + (1 - normalizedDistance) * 0.25;
               const scale = baseScale;
-              const opacity = 0.9; // Fixed high opacity for all images
-              const blur = 0; // No blur for any images
+              const opacity = 0.9;
 
-              // Rotation for tilt effect (not text rotation)
-              const tiltRotation = Math.sin(time * 0.3 + index) * 5;
+              // Reduced rotation for tilt effect
+              const tiltRotation = Math.sin(time * 0.2 + index) * 3; // Less rotation
 
               return (
                 <div
                   key={image.id}
                   className="absolute group transition-all duration-1000 ease-out"
                   style={{
-                    transform: `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${scale}) rotate(${tiltRotation}deg)`,
+                    transform: `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${scale}) rotate(${tiltRotation}deg) translateZ(0)`,
                     left: "50%",
                     top: "50%",
                     width: `${itemWidth}px`,
                     height: `${itemHeight + 80}px`,
                     opacity: opacity,
-                    filter: `blur(${blur}px)`,
                     zIndex: Math.round((1 - normalizedDistance) * 50),
                   }}
                 >
-                  {/* Advanced Image Card */}
+                  {/* Optimized Image Card */}
                   <div
-                    className="relative w-full h-full rounded-2xl overflow-hidden transition-all duration-700 cursor-pointer shadow-xl shadow-black/50 hover:shadow-red-500/30"
+                    className="relative w-full h-full rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer shadow-xl shadow-black/40 hover:shadow-red-500/25"
                     onClick={() => setSelectedImage(index)}
                     style={{
                       background:
                         "linear-gradient(145deg, rgba(55, 65, 81, 0.9), rgba(17, 24, 39, 0.9))",
+                      transform: 'translateZ(0)', // Hardware acceleration
                     }}
                   >
                     {/* Image Container */}
                     <div className="relative w-full h-52 overflow-hidden">
                       <img
                         src={image.src}
-                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                         loading="lazy"
                         decoding="async"
-                        style={{ willChange: 'transform, opacity' }}
+                        style={{ transform: 'translateZ(0)' }}
                       />
 
-                      {/* Dynamic Overlay Effects */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                      {/* Simplified Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                     </div>
 
-                    {/* Content Area - Always Upright */}
-
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-red-600/90 via-red-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
-                      <div className="text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mb-3 mx-auto backdrop-blur-md border border-white/30">
+                    {/* Optimized Hover Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-red-600/80 via-red-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-400 flex items-center justify-center">
+                      <div className="text-white text-center transform translate-y-3 group-hover:translate-y-0 transition-transform duration-400">
+                        <div className="w-12 h-12 bg-white/15 rounded-full flex items-center justify-center mb-2 mx-auto backdrop-blur-sm border border-white/20">
                           <svg
-                            className="w-7 h-7"
+                            className="w-6 h-6"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                           >
@@ -170,19 +165,6 @@ const GallerySection = () => {
               );
             })}
           </div>
-
-          {/* Custom CSS Animations */}
-          <style>{`
-            @keyframes float {
-              0%, 100% { transform: translateY(0px) rotate(0deg); }
-              33% { transform: translateY(-10px) rotate(120deg); }
-              66% { transform: translateY(5px) rotate(240deg); }
-            }
-            @keyframes sparkle {
-              0%, 100% { opacity: 0; transform: scale(0); }
-              50% { opacity: 1; transform: scale(1); }
-            }
-          `}</style>
         </div>
       );
     };
