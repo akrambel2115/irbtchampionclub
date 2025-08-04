@@ -224,10 +224,10 @@ const Footer = () => {
               </a>
             </div>
 
-            <div className="flex space-x-6 text-sm">
+            <div className="flex text-sm">
               <Link
                 to="/PrivacyPolicy"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-gray-400 hover:text-white transition-colors duration-200 ml-2 mr-2"
               >
                 {t("footer.privacyPolicy")}
               </Link>

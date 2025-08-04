@@ -212,7 +212,7 @@ const resources = {
       'policy.rightsAccess': 'يحق لك طلب الوصول إلى بياناتك الشخصية.',
       'policy.rightsCorrection': 'يحق لك تصحيح أو تحديث بياناتك.',
       'policy.rightsDelete': 'يحق لك طلب حذف بياناتك في أي وقت.',
-      'policy.lastUpdated': 'آخر تحديث: يوليو 2025',
+      'policy.lastUpdated': 'آخر تحديث: جويلية 2025',
       // Terms & Conditions
       'terms.title': 'الشروط والأحكام',
       'terms.intro': 'يرجى قراءة هذه الشروط بعناية قبل التسجيل أو استخدام خدماتنا. باستخدامك لموقعنا، فإنك توافق على هذه الشروط.',
@@ -229,7 +229,7 @@ const resources = {
       'terms.paymentDesc': 'يجب دفع الرسوم في المواعيد المحددة لضمان استمرار العضوية.',
       'terms.terminationTitle': 'إنهاء العضوية',
       'terms.terminationDesc': 'يحق للنادي إنهاء العضوية في حال مخالفة الشروط أو السلوك غير اللائق.',
-      'terms.lastUpdated': 'آخر تحديث: يوليو 2025',
+      'terms.lastUpdated': 'آخر تحديث: جويلية 2025',
 
       'footer.description': 'تدريب احترافي في الفنون القتالية و اللياقة البدنية، إنضم إلى عالم المحاربين معنا IRBT',
       'footer.quickLinks': 'روابط سريعة',

@@ -5,6 +5,7 @@ import Stack from "@/blocks/Components/Stack/Stack";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Zap,
+  Dumbbell,
   Shield,
   Target,
   Flame,
@@ -75,7 +76,7 @@ const SpecialtiesSection = () => {
     // Gym specialty
     {
       title: t("specialty.gym.title"),
-      icon: <Shield className="h-8 w-8" />,
+      icon: <Dumbbell className="h-8 w-8" />,
       description: t("specialty.gym.description"),
       features: [
         t("specialty.gym.feature1"),
@@ -324,19 +325,19 @@ const SpecialtiesSection = () => {
             <div className="bg-gradient-red-gold rounded-full p-2.5 w-fit mx-auto mb-2">
               {specialty.icon}
             </div>
-            <h3 className="font-bebas text-xl text-white mb-1">
+            <h3 className="font-bebas text-2xl text-white mb-1">
               {specialty.title}
             </h3>
           </div>
           
           {/* Content - Description and Features */}
           <div className="min-h-0">
-            <p className="text-gray-300 mb-3 leading-relaxed text-xs text-center">
+            <p className="text-gray-300 mb-3 leading-relaxed text-sm text-center">
               {specialty.description}
             </p>
             {/* Show all 4 features */}
             <div className="mb-3">
-              <h4 className="text-red-400 font-semibold mb-2 flex items-center justify-center text-xs">
+              <h4 className="text-red-400 font-semibold mb-2 flex items-center justify-center text-sm">
                 <Target className="h-3 w-3 mr-1" />
                 {t("specialties.whatYouLearn")}
               </h4>
@@ -344,9 +345,9 @@ const SpecialtiesSection = () => {
                 {specialty.features.map((feature, idx) => (
                   <li
                     key={idx}
-                    className="text-gray-400 text-xs flex items-center justify-center text-center px-2"
+                    className="text-gray-400 text-sm flex items-center justify-center text-center px-2"
                   >
-                    <span className="text-yellow-500 mr-1 text-xs">✓</span>
+                    <span className="text-yellow-500 mr-1 text-sm">✓</span>
                     <span className="truncate">{feature}</span>
                   </li>
                 ))}
@@ -358,7 +359,7 @@ const SpecialtiesSection = () => {
           <div className="mt-auto pt-4 border-t border-gray-700/30">
             <div className="flex justify-center">
               <div className="bg-gradient-to-r from-red-600/20 to-yellow-600/20 rounded-full px-3 py-1.5 border border-gray-600/50">
-                <span className="text-xs text-gray-200 font-medium whitespace-nowrap">
+                <span className="text-sm text-gray-200 font-medium whitespace-nowrap">
                   {t("specialties.forAll")}
                 </span>
               </div>
@@ -587,7 +588,7 @@ const SpecialtiesSection = () => {
         {/* Stack animation for specialties */}
         <div className="py-6 md:py-12 flex justify-center">
           <Stack
-            cardDimensions={{ width: 260, height: 390 }}
+            cardDimensions={{ width: 280, height: 430 }}
             cardsData={specialtiesWithIds}
             renderCard={renderCard}
             sensitivity={80}
