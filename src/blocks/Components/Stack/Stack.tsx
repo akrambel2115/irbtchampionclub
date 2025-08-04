@@ -3,7 +3,7 @@
 */
 
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 
 interface CardRotateProps {
   children: React.ReactNode;
@@ -14,10 +14,10 @@ interface CardRotateProps {
 function CardRotate({ children, onSendToBack, sensitivity }: CardRotateProps) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [60, -60]);
-  const rotateY = useTransform(x, [-100, 100], [-60, 60]);
+  const rotateX = useTransform(y, [-100, 100], [30, -30]); // Reduced rotation range
+  const rotateY = useTransform(x, [-100, 100], [-30, 30]); // Reduced rotation range
 
-  function handleDragEnd(_: never, info: { offset: { x: number; y: number } }) {
+  const handleDragEnd = useCallback((_: never, info: { offset: { x: number; y: number } }) => {
     if (
       Math.abs(info.offset.x) > sensitivity ||
       Math.abs(info.offset.y) > sensitivity
@@ -27,17 +27,24 @@ function CardRotate({ children, onSendToBack, sensitivity }: CardRotateProps) {
       x.set(0);
       y.set(0);
     }
-  }
+  }, [sensitivity, onSendToBack, x, y]);
 
   return (
     <motion.div
       className="absolute cursor-grab"
-      style={{ x, y, rotateX, rotateY }}
+      style={{ 
+        x, 
+        y, 
+        rotateX, 
+        rotateY,
+        transform: 'translateZ(0)', // Force hardware acceleration
+      }}
       drag
       dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
-      dragElastic={0.6}
+      dragElastic={0.4} // Reduced elasticity for smoother performance
       whileTap={{ cursor: "grabbing" }}
       onDragEnd={handleDragEnd}
+      dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
     >
       {children}
     </motion.div>
@@ -54,7 +61,7 @@ interface StackProps {
   renderCard?: (card: any) => React.ReactNode;
 }
 
-export default function Stack({
+function Stack({
   randomRotation = false,
   sensitivity = 200,
   cardDimensions = { width: 208, height: 208 },
@@ -86,7 +93,7 @@ export default function Stack({
         ]
   );
 
-  const sendToBack = (id: number) => {
+  const sendToBack = useCallback((id: number) => {
     setCards((prev) => {
       const newCards = [...prev];
       const index = newCards.findIndex((card) => card.id === id);
@@ -94,7 +101,14 @@ export default function Stack({
       newCards.unshift(card);
       return newCards;
     });
-  };
+  }, []);
+
+  // Memoize transition configuration for better performance
+  const springTransition = useMemo(() => ({
+    type: "spring" as const,
+    stiffness: animationConfig.stiffness,
+    damping: animationConfig.damping,
+  }), [animationConfig.stiffness, animationConfig.damping]);
 
   return (
     <div
@@ -103,6 +117,7 @@ export default function Stack({
         width: cardDimensions.width,
         height: cardDimensions.height,
         perspective: 600,
+        transform: 'translateZ(0)', // Hardware acceleration
       }}
     >
       {cards.map((card, index) => {
@@ -122,15 +137,12 @@ export default function Stack({
                 transformOrigin: "90% 90%",
               }}
               initial={false}
-              transition={{
-                type: "spring",
-                stiffness: animationConfig.stiffness,
-                damping: animationConfig.damping,
-              }}
+              transition={springTransition}
               style={{
                 width: cardDimensions.width,
                 height: cardDimensions.height,
                 overflow: 'visible',
+                transform: 'translateZ(0)', // Hardware acceleration
               }}
             >
               {renderCard ? renderCard(card) : (
@@ -138,6 +150,8 @@ export default function Stack({
                   src={card.img}
                   alt={`card-${card.id}`}
                   className="w-full h-full object-cover pointer-events-none"
+                  loading="lazy"
+                  decoding="async"
                 />
               )}
             </motion.div>
@@ -147,3 +161,5 @@ export default function Stack({
     </div>
   );
 }
+
+export default Stack;
