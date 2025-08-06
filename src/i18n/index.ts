@@ -46,6 +46,10 @@ const resources = {
 
       'trainer2.name': 'تسنيم حمايدية',
       'trainer2.title': 'مدربة النساء',
+      'trainer2.achievement1': 'شهادة مدربة نساء كارديو و فيزيك (أيروبيك)',
+      'trainer2.achievement2': 'شهادة مساعدة مدرب رئيسي',
+      'trainer2.specialty1': 'كارديو و لياقة بدنية',
+      'trainer2.specialty2': 'الأيروبيك',
 
       'trainer3.name': 'وائل دعاس',
       'trainer3.title': 'مساعد مدرب',
@@ -116,6 +120,14 @@ const resources = {
       'specialty.romanWrestling.feature2': 'المنافسة على الحلبة',
       'specialty.romanWrestling.feature3': 'تقوية العضلات',
       'specialty.romanWrestling.feature4': 'التحمل البدني',
+      
+      // Massage, cupping and acupuncture specialty
+      'specialty.massage.title': 'تدليك، الحجامة والوخز بالإبر',
+      'specialty.massage.description': 'تعزيز التعافي بتقنيات العلاج اليدوي.',
+      'specialty.massage.feature1': 'الاسترخاء',
+      'specialty.massage.feature2': 'تخفيف الألم',
+      'specialty.massage.feature3': 'تحسين الدورة الدموية',
+      'specialty.massage.feature4': 'الشفاء بإذن الله',
       
       'specialty.mma.title': 'الفنون القتالية المختلطة MMA',
       'specialty.mma.description': 'نظام قتالي شامل يجمع بين الضرب، المصارعة، والمواجهة الأرضية.',
@@ -393,6 +405,14 @@ const resources = {
       'specialty.romanWrestling.feature2': 'Ring Competition',
       'specialty.romanWrestling.feature3': 'Strength Conditioning',
       'specialty.romanWrestling.feature4': 'Endurance Training',
+
+      // Massage, cupping and acupuncture specialty
+      'specialty.massage.title': 'Massage, Cupping & Acupuncture',
+      'specialty.massage.description': 'Enhance recovery and wellness with manual therapy techniques.',
+      'specialty.massage.feature1': 'Relaxation',
+      'specialty.massage.feature2': 'Pain relief',
+      'specialty.massage.feature3': 'Improved circulation',
+      'specialty.massage.feature4': 'Holistic healing',
 
       'specialty.mma.title': 'MMA',
       'specialty.mma.description': 'Train the full spectrum of combat: striking, wrestling, and ground control.',

@@ -134,10 +134,16 @@ const TrainersSection = () => {
     {
       name: t("trainer2.name"),
       title: t("trainer2.title"),
-      experience: "2 " + t("trainers.experience"),
-      image: "",
-      achievements: [],
-      specialties: [],
+      experience: "3 " + t("trainers.experience"),
+      image: "/images/tasnim.png",
+      achievements: [
+        t("trainer2.achievement1"),
+        t("trainer2.achievement2"),
+      ],
+      specialties: [
+        t('trainer2.specialty1'),
+        t('trainer2.specialty2'),
+      ],
     },
     {
       name: t("trainer3.name"),

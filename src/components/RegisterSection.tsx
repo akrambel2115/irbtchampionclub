@@ -34,6 +34,7 @@ const RegisterSection = () => {
     t("specialty.fitness.man.title"),
     t("specialty.fitness.woman.title"),
     t("specialty.romanWrestling.title"),
+    t("specialty.massage.title"),
   ];
   const experienceLevels = [
     t('experience.beginner'),

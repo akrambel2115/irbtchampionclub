@@ -103,6 +103,21 @@ const SpecialtiesSection = () => {
       forWomen: true,
       image: "/images/roman-wrestling.webp",
     },
+    // Massage, cupping & acupuncture specialty
+    {
+      title: t("specialty.massage.title"),
+      icon: <Calendar className="h-8 w-8" />,
+      description: t("specialty.massage.description"),
+      features: [
+        t("specialty.massage.feature1"),
+        t("specialty.massage.feature2"),
+        t("specialty.massage.feature3"),
+        t("specialty.massage.feature4"),
+      ],
+      forMen: true,
+      forWomen: true,
+      image: "/images/massage.webp",
+    },
     {
       title: t("specialty.mma.title"),
       icon: <Swords className="h-8 w-8" />,
