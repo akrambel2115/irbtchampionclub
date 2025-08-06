@@ -215,6 +215,28 @@ const SpecialtiesSection = () => {
         "Basic Training",
       ],
     },
+    {
+      id: 3,
+      title: t("ageGroup.oldMen.title"),
+      subtitle: t("ageGroup.oldMen.subtitle"),
+      age: t("ageGroup.oldMen.age"),
+      color: "from-green-600 to-emerald-800",
+      borderColor: "border-green-500/30",
+      bgColor: "bg-green-500/10",
+      description: t("ageGroup.oldMen.description"),
+      activities: [
+        "كارديو و فيزيك",
+        "إنقاص الوزن",
+        "نحت الجسم و إبراو العضلات",
+        "معالجة الأمراض المزمنة (سكري، ضغط الدم، هشاشة العظام، ...)",
+      ],
+      activitiesEn: [
+        "Light Exercise & Flexibility",
+        "Cardiovascular Training",
+        "Balance & Coordination",
+        "Rehabilitation Programs",
+      ],
+    },
   ], [t]);
 
   // Memoize animation variants to prevent recreation
@@ -528,7 +550,7 @@ const SpecialtiesSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="max-w-6xl mx-auto mb-16"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto">
             {ageGroups.map((group, index) => (
               <AgeGroupCard
                 key={group.id}

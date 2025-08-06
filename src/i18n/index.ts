@@ -85,6 +85,11 @@ const resources = {
       'ageGroup.youngKids.description': 'أنشطة رياضية وذهنية تطويرية',
       'ageGroup.youngKids.age': 'من 3 سنوات و نصف إلى 5 سنوات',
 
+      'ageGroup.oldMen.title': 'الذكور (كبار السن)',
+      'ageGroup.oldMen.subtitle': 'برنامج كبار السن',
+      'ageGroup.oldMen.description': 'أحدث البرامج التدريبية لكبار السن و أصحاب الأمراض المزمنة',
+      'ageGroup.oldMen.age': '40 سنة فما فوق',
+
       // Specialty Names and Descriptions
       'specialty.boxing.title': 'الملاكمة',
       'specialty.boxing.description': 'أتقن الملاكمة باحتراف من خلال التدريبات الديناميكية المبرمجة بأعلى جودة و إتقان',
@@ -369,6 +374,11 @@ const resources = {
       'ageGroup.youngKids.subtitle': 'Young Kids Program',
       'ageGroup.youngKids.description': 'Developmental sports and mental activities',
       'ageGroup.youngKids.age': 'From 3.5 to 5 years',
+
+      'ageGroup.oldMen.title': 'Seniors',
+      'ageGroup.oldMen.subtitle': 'Senior Citizens Program',
+      'ageGroup.oldMen.description': 'Specialized programs to maintain fitness and health',
+      'ageGroup.oldMen.age': '50+ years',
 
       // Specialty Names and Descriptions
       'specialty.boxing.title': 'Boxing',
