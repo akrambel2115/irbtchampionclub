@@ -131,6 +131,9 @@ const GallerySection = () => {
                         className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                         loading="lazy"
                         decoding="async"
+                        fetchPriority="low"
+                        width={itemWidth}
+                        height={itemHeight}
                         style={{ transform: 'translateZ(0)' }}
                       />
 
