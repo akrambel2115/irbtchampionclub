@@ -14,6 +14,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { UserPlus, Calendar, MapPin, Phone, Heart } from 'lucide-react';
 import { toast } from 'sonner';
+import { Link } from 'react-router-dom';
 import Magnet from '@/blocks/Animations/Magnet/Magnet';
 
 const RegisterSection = () => {
@@ -443,14 +444,24 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
                         </FormControl>
                         <div className="space-y-1 leading-none ml-2 md:ml-3">
                           <FormLabel className="text-white text-sm cursor-pointer">
-                            {t('register.acceptTerms')} 
-                            <a href="/TermsAndConditions" className="text-red-400 hover:text-red-300 underline mx-1">
+                            {t('register.acceptTerms')}
+                            <Link
+                              to="/TermsAndConditions"
+                              className="text-red-400 hover:text-red-300 underline mx-1"
+                              onClick={(e) => e.stopPropagation()}
+                              onMouseDown={(e) => e.preventDefault()}
+                            >
                               {t('footer.terms')}
-                            </a>
+                            </Link>
                             {t('register.and')}
-                            <a href="/PrivacyPolicy" className="text-red-400 hover:text-red-300 underline mx-1">
+                            <Link
+                              to="/PrivacyPolicy"
+                              className="text-red-400 hover:text-red-300 underline mx-1"
+                              onClick={(e) => e.stopPropagation()}
+                              onMouseDown={(e) => e.preventDefault()}
+                            >
                               {t('footer.privacyPolicy')}
-                            </a>
+                            </Link>
                             *
                           </FormLabel>
                           <p className="text-xs text-gray-400">
