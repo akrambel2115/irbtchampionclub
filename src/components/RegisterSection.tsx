@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { UserPlus, Calendar, MapPin, Phone, Heart } from 'lucide-react';
 import { toast } from 'sonner';
@@ -62,6 +63,9 @@ const RegisterSection = () => {
     specialty: z.string().min(1, t('validation.specialty.min')),
     experience: z.string().min(1, t('validation.experience.min')),
     goals: z.string().optional(),
+    acceptTerms: z.boolean().refine((val) => val === true, {
+      message: t('validation.terms.required'),
+    }),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -79,6 +83,7 @@ const RegisterSection = () => {
       specialty: '',
       experience: '',
       goals: '',
+      acceptTerms: false,
     },
   });
 
@@ -423,11 +428,45 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
                     )}
                   />
 
+                  {/* Terms and Conditions Checkbox */}
+                  <FormField
+                    control={form.control}
+                    name="acceptTerms"
+                    render={({ field }) => (
+                      <FormItem className="flex flex-row items-start gap-4 space-y-0 p-6">
+                        <FormControl>
+                          <Checkbox
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                            className="data-[state=checked]:bg-red-600 data-[state=checked]:border-red-600"
+                          />
+                        </FormControl>
+                        <div className="space-y-1 leading-none ml-2 md:ml-3">
+                          <FormLabel className="text-white text-sm cursor-pointer">
+                            {t('register.acceptTerms')} 
+                            <a href="/TermsAndConditions" className="text-red-400 hover:text-red-300 underline mx-1">
+                              {t('footer.terms')}
+                            </a>
+                            {t('register.and')}
+                            <a href="/PrivacyPolicy" className="text-red-400 hover:text-red-300 underline mx-1">
+                              {t('footer.privacyPolicy')}
+                            </a>
+                            *
+                          </FormLabel>
+                          <p className="text-xs text-gray-400">
+                            {t('register.termsDescription')}
+                          </p>
+                        </div>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
                   <Button
                     type="submit"
                     size="lg"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-red-gold hover:scale-105 transition-all duration-300 pulse-glow text-lg py-6"
+                    disabled={isSubmitting || !form.watch('acceptTerms')}
+                    className="w-full bg-gradient-red-gold hover:scale-105 transition-all duration-300 pulse-glow text-lg py-6 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? t('register.submitting') : t('register.submit')}
                   </Button>
