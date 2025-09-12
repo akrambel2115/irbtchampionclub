@@ -54,6 +54,8 @@ const TrainerCard = React.memo(function TrainerCard(props: TrainerCardProps) {
               className={`w-full h-full object-cover transform ${trainer.imageScale || ''}`}
               loading="lazy"
               decoding="async"
+              width={192}
+              height={192}
               style={{ willChange: 'transform, opacity' }}
             />
           </div>
