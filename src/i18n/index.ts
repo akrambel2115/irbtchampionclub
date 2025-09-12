@@ -25,6 +25,7 @@ const resources = {
       'hero.stats.trainers': 'مدربين',
       'hero.stats.experience': 'سنوات خبرة',
       'hero.cta': 'ابدأ رحلتك',
+  'hero.extraLine': 'يد واحدة تاورتنا أجمل',
       
       // Trainers Section
       'trainers.title': 'تعرف على مدربينا',
@@ -44,7 +45,7 @@ const resources = {
       'trainer.specialty2': 'كيك بوكسينغ',
       'trainer.specialty3': 'كارديو و فيزيك / أيروبيك',
 
-      'trainer2.name': 'تسنيم حمايدية',
+      'trainer2.name': 'رحماني إيمان',
       'trainer2.title': 'مدربة النساء',
       'trainer2.achievement1': 'شهادة مدربة نساء كارديو و فيزيك (أيروبيك)',
       'trainer2.achievement2': 'شهادة مساعدة مدرب رئيسي',
@@ -66,7 +67,7 @@ const resources = {
   'trainer4.name': 'بولقرون برهان الدين',
   'trainer4.title': 'مدرب',
   'trainer4.achievement1': 'بطل أفريقيا للكيك بوكسينغ 2016',
-  'trainer4.achievement2': 'بطل الجزائر في الموساي تاي 2017',
+  'trainer4.achievement2': 'بطل الجزائر في المواي تاي 2017',
   'trainer4.specialty1': 'كيك بوكسينغ',
   'trainer4.specialty2': 'مواي تاي',
       
@@ -344,6 +345,7 @@ const resources = {
       'hero.stats.trainers': 'Expert Trainer',
       'hero.stats.experience': 'Years of Experience',
       'hero.cta': 'Start Your Journey',
+  'hero.extraLine': 'One hand makes our Taoura more beautiful',
 
       // Trainers Section
       'trainers.title': 'Meet Our Trainers',
