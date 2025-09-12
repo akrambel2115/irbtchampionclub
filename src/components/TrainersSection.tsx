@@ -11,8 +11,10 @@ interface TrainerCardProps {
   trainer: {
     name: string;
     title: string;
-    experience: string;
+    experience?: string;
     image: string;
+    imageSize?: string;
+    imageScale?: string;
     achievements: string[];
     specialties: string[];
   };
@@ -29,7 +31,7 @@ const TrainerCard = React.memo(function TrainerCard(props: TrainerCardProps) {
   return (
     <motion.div
       variants={cardVariants}
-      className={`w-full max-w-sm transition-all duration-300 ${orderClass} ${isMainTrainer ? "md:scale-105 md:-translate-y-4" : "md:hover:scale-105"}`}
+      className={`w-full transition-all duration-300 ${orderClass} ${isMainTrainer ? "md:scale-105 md:-translate-y-4" : "md:hover:scale-105"}`}
     >
       <GlareHover
         width="100%"
@@ -44,12 +46,12 @@ const TrainerCard = React.memo(function TrainerCard(props: TrainerCardProps) {
         trigger={glareTrigger}
       >
         {/* Trainer Image */}
-        <div className="relative mb-8">
-          <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-red-600">
+          <div className="relative mb-8">
+          <div className={`${trainer.imageSize || 'w-48 h-48'} mx-auto rounded-full overflow-hidden border-4 border-red-600`}>
             <img
               src={trainer.image}
               alt={trainer.name}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              className={`w-full h-full object-cover transform ${trainer.imageScale || ''}`}
               loading="lazy"
               decoding="async"
               style={{ willChange: 'transform, opacity' }}
@@ -63,10 +65,12 @@ const TrainerCard = React.memo(function TrainerCard(props: TrainerCardProps) {
         <div className="text-center mb-6">
           <h3 className="font-bebas text-3xl text-white mb-2">{trainer.name}</h3>
           <p className="text-red-400 font-medium text-lg mb-3">{trainer.title}</p>
-          <Badge variant="secondary" className="bg-red-600/20 text-red-400 border-red-600 px-4 py-2">
-            <Star className="h-4 w-4 mr-2" />
-            {trainer.experience}
-          </Badge>
+          {trainer.experience && (
+            <Badge variant="secondary" className="bg-red-600/20 text-red-400 border-red-600 px-4 py-2">
+              <Star className="h-4 w-4 mr-2" />
+              {trainer.experience}
+            </Badge>
+          )}
         </div>
         {/* Achievements */}
         {trainer.achievements && trainer.achievements.length > 0 && (
@@ -113,47 +117,71 @@ const TrainersSection = () => {
     threshold: 0.1,
   });
 
-  const trainers = React.useMemo(() => [
+  // Grouped data for layout: owner -> mainTrainers (3) -> assistants (2)
+  const owner = React.useMemo(() => ({
+    name: t("trainer.name"),
+    title: t("trainer.title"),
+    experience: "9 " + t("trainers.experience"),
+    image: "/images/oussama.png",
+    achievements: [
+      t("trainer.achievement1"),
+      t("trainer.achievement2"),
+      t("trainer.achievement3"),
+      t("trainer.achievement4"),
+    ],
+    specialties: [t("trainer.specialty1"), t("trainer.specialty2"), t("trainer.specialty3")],
+  }), [t]);
+
+  const mainTrainers = React.useMemo(() => [
     {
-      name: t("trainer.name"),
-      title: t("trainer.title"),
+      name: t("trainer4.name"),
+      title: t("trainer4.title"),
       experience: "9 " + t("trainers.experience"),
-      image: "/images/oussama.png",
-      achievements: [
-        t("trainer.achievement1"),
-        t("trainer.achievement2"),
-        t("trainer.achievement3"),
-        t("trainer.achievement4"),
-      ],
-      specialties: [
-        t("trainer.specialty1"),
-        t("trainer.specialty2"),
-        t("trainer.specialty3"),
-      ],
+  image: "/images/boulegroune.jpg",
+  // Static internal zoom (no hover scaling)
+  imageScale: 'scale-[1.55] md:scale-[1.9]',
+      achievements: [t("trainer4.achievement1"), t("trainer4.achievement2")],
+      specialties: [t("trainer4.specialty1"), t("trainer4.specialty2")],
     },
     {
       name: t("trainer2.name"),
       title: t("trainer2.title"),
       experience: "3 " + t("trainers.experience"),
       image: "/images/tasnim.png",
-      achievements: [
-        t("trainer2.achievement1"),
-        t("trainer2.achievement2"),
-      ],
-      specialties: [
-        t('trainer2.specialty1'),
-        t('trainer2.specialty2'),
-      ],
+      achievements: [t("trainer2.achievement1"), t("trainer2.achievement2")],
+      specialties: [t("trainer2.specialty1"), t("trainer2.specialty2")],
     },
+    {
+      name: t("trainer5.name"),
+      title: t("trainer5.title"),
+      experience: "4 " + t("trainers.experience"),
+      image: "/images/d7i7.jpg",
+      // Slight internal shrink to make photo appear smaller inside the fixed circle
+      imageScale: 'scale-90 md:scale-95',
+      achievements: [t("trainer5.achievement1"), t("trainer5.achievement2")],
+      specialties: [t("trainer5.specialty1")],
+    },
+  ], [t]);
+
+  const assistants = React.useMemo(() => [
     {
       name: t("trainer3.name"),
       title: t("trainer3.title"),
-      experience: "2 " + t("trainers.experience"),
       image: "/images/ouail.png",
       achievements: [],
       specialties: [],
     },
+    {
+      name: "سعد بوزيد",
+      title: "مساعد مدرب",
+      image: "/images/bouzid.jpg",
+      achievements: [],
+      specialties: [],
+    },
   ], [t]);
+
+  // Flatten for glare triggers and animation sequencing
+  const trainersFlat = React.useMemo(() => [owner, ...mainTrainers, ...assistants], [owner, mainTrainers, assistants]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -178,11 +206,11 @@ const TrainersSection = () => {
   };
 
   // Automatic glare trigger state
-  const [glareTriggers, setGlareTriggers] = useState([false, false]);
+  const [glareTriggers, setGlareTriggers] = useState(() => Array(trainersFlat.length).fill(false));
 
   useEffect(() => {
     // Reduce frequency for performance
-    const intervals = trainers.map(
+    const intervals = trainersFlat.map(
       (_, idx) =>
         setInterval(() => {
           setGlareTriggers((prev) => {
@@ -201,7 +229,7 @@ const TrainersSection = () => {
     );
     return () => intervals.forEach(clearInterval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [trainers.length]);
+  }, [trainersFlat.length]);
 
   return (
     <section id="trainers" className="py-20 bg-black relative overflow-hidden">
@@ -226,24 +254,65 @@ const TrainersSection = () => {
           </p>
         </motion.div>
 
+        {/* Owner row */}
         <motion.div
-          ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-center"
+          className="grid grid-cols-1 md:grid-cols-3 mb-12"
         >
-          {trainers.map((trainer, index) => (
+          <div ref={ref} className="md:col-start-2">
             <TrainerCard
-              key={index}
-              trainer={trainer}
-              isMainTrainer={index === 0}
-              orderClass={index === 0 ? "order-first md:order-2" : index === 1 ? "md:order-1" : "md:order-3"}
+              trainer={owner}
+              isMainTrainer={true}
+              orderClass="justify-self-center"
               cardVariants={cardVariants}
-              glareTrigger={glareTriggers[index]}
+              glareTrigger={glareTriggers[0]}
+              t={t}
+            />
+          </div>
+        </motion.div>
+
+        {/* Main trainers row */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+        >
+          {mainTrainers.map((trainer, idx) => (
+            <TrainerCard
+              key={trainer.name}
+              trainer={trainer}
+              isMainTrainer={false}
+              orderClass=""
+              cardVariants={cardVariants}
+              glareTrigger={glareTriggers[idx + 1]}
               t={t}
             />
           ))}
+        </motion.div>
+
+        {/* Assistants row (2 centered) - wrapped and centered */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"} 
+          className="flex justify-center mb-12"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl">
+            {assistants.map((trainer, idx) => (
+              <TrainerCard
+                key={trainer.name}
+                trainer={trainer}
+                isMainTrainer={false}
+                orderClass=""
+                cardVariants={cardVariants}
+                glareTrigger={glareTriggers[idx + 1 + mainTrainers.length]}
+                t={t}
+              />
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
