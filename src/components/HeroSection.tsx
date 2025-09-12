@@ -28,6 +28,10 @@ const HeroSection = () => {
           alt="IRBT Champion Club Logo"
           className={`drop-shadow-lg ${isArabic ? "h-[70vw]" : "h-[60vw]"} w-auto`}
           style={{ maxWidth: '80vw' }}
+          loading="lazy"
+          decoding="async"
+          width={512}
+          height={512}
         />
       </div>
 
