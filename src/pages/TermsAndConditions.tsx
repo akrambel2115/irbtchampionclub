@@ -24,6 +24,10 @@ export default function TermsAndConditionsPage() {
         <p className="text-gray-400 mb-6">{t('terms.paymentDesc')}</p>
         <h2 className="text-2xl font-semibold text-white mb-2">{t('terms.terminationTitle')}</h2>
         <p className="text-gray-400 mb-6">{t('terms.terminationDesc')}</p>
+        <h2 className="text-2xl font-semibold text-white mb-2">{t('terms.contentResponsibilityTitle')}</h2>
+        <p className="text-gray-400 mb-6">
+          {t('terms.contentResponsibilityDesc')}
+        </p>
         <p className="text-gray-500 text-xs mt-8">{t('terms.lastUpdated')}</p>
       </div>
     </div>
