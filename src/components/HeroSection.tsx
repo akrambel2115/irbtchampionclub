@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import AnimatedBackground from './AnimatedBackground';
 import TextType from '@/blocks/TextAnimations/TextType/TextType';
+import BlurText from './BlurText';
 import CountUp from 'react-countup';
 
 const HeroSection = () => {
@@ -111,6 +112,19 @@ const HeroSection = () => {
           >
             {t('hero.description')}
           </motion.p>
+
+          {isArabic && (
+            <div className="flex justify-center">
+              <BlurText
+                text={t('hero.extraLine')}
+                delay={300}
+                stepDuration={0.6}
+                animateBy="words"
+                direction="top"
+                className="text-center text-2xl md:text-3xl lg:text-4xl text-yellow-400 mt-2 font-bebas"
+              />
+            </div>
+          )}
 
           {/* Stats - optimized animations */}
           <motion.div
