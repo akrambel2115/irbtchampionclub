@@ -136,7 +136,7 @@ const TrainersSection = () => {
     {
       name: t("trainer4.name"),
       title: t("trainer4.title"),
-      experience: "9 " + t("trainers.experience"),
+      experience: "20 " + t("trainers.experience"),
   image: "/images/boulegroune.jpg",
   // Static internal zoom (no hover scaling)
   imageScale: 'scale-[1.55] md:scale-[1.9]',
@@ -154,7 +154,7 @@ const TrainersSection = () => {
     {
       name: t("trainer5.name"),
       title: t("trainer5.title"),
-      experience: "4 " + t("trainers.experience"),
+      experience: "21 " + t("trainers.experience"),
       image: "/images/d7i7.jpg",
       // Slight internal shrink to make photo appear smaller inside the fixed circle
       imageScale: 'scale-90 md:scale-95',
