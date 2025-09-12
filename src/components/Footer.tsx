@@ -90,6 +90,21 @@ const Footer = () => {
                     ولاية سوق أهراس، بلدية تاورة، طريق ونزة
                   </span>
                 </div>
+                
+                {/* Google Maps Embed */}
+                <div className="mt-4">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.2!2d8.0467219!3d36.161639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fa690042e2f9e1:0xc7e8159e4cf44301!2z2YLYp9i52KkgSVJCVCBDSEFNUElPTiBDTFVC!5e0!3m2!1sen!2sdz!4v1694513234567!5m2!1sen!2sdz"
+                    width="100%"
+                    height="200"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg shadow-lg"
+                  ></iframe>
+                </div>
+
                 <div className="flex items-center text-gray-400">
                   <Phone className="h-4 w-4 mr-3 text-red-600" />
                   <span className="text-sm">0669778844</span>
