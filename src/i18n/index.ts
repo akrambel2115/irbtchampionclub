@@ -28,31 +28,47 @@ const resources = {
       
       // Trainers Section
       'trainers.title': 'تعرف على مدربينا',
-      'trainers.description': 'تدرب مع بطل نافس على المستوى الوطني و الدولي و حائز على ألقاب وطنية و جهوية',
+      'trainers.description': 'تدرب مع أبطال نافسوا على المستوى الوطني والدولي وحازوا على ألقاب وطنية وجهوية',
       'trainers.achievements': 'الإنجازات',
       'trainers.specialties': 'التخصصات',
-      'trainers.experience': 'سنوات خبرة',
+      'trainers.experience': 'سنوات الخبرة',
       
       // Trainer Data
       'trainer.name': 'أسامة طبيب',
-      'trainer.title': 'مدرب رئيسي',
+      'trainer.title': 'مدير أكادمية IRBT و مدرب رئيسي',
       'trainer.achievement1': 'أصغر مدرب ملاكمة معترف به من الفيديرالية الجزائرية',
       'trainer.achievement2': 'متحصل على رخصة ملاكم محترف و أصغر مدرب وطني لأول مرة في تاريخ الرياضة القتالية',
       'trainer.achievement3': 'بطل تونس للملاكمة في فئة الهواة وزن 70كغ (2023)',
       'trainer.achievement4': 'المرتبة الأولى في الرياضيات العسكرية، استعراضات فنون القتال و الرماية بالأسلحة الحية ن.ع 4 (جانات)',
-      'trainer.specialty1': 'الكيك بوكسينغ',
-      'trainer.specialty2': 'كارديو و لياقة بدنية',
-      'trainer.specialty3': 'الأيروبيك',
+      'trainer.specialty1': 'ملاكمة',
+      'trainer.specialty2': 'كيك بوكسينغ',
+      'trainer.specialty3': 'كارديو و فيزيك / أيروبيك',
 
       'trainer2.name': 'تسنيم حمايدية',
       'trainer2.title': 'مدربة النساء',
       'trainer2.achievement1': 'شهادة مدربة نساء كارديو و فيزيك (أيروبيك)',
       'trainer2.achievement2': 'شهادة مساعدة مدرب رئيسي',
       'trainer2.specialty1': 'كارديو و لياقة بدنية',
-      'trainer2.specialty2': 'الأيروبيك',
+      'trainer2.specialty2': 'أيروبيك',
 
       'trainer3.name': 'وائل دعاس',
       'trainer3.title': 'مساعد مدرب',
+
+  'trainer5.name': 'دحيح عقبة',
+  'trainer5.title': 'مدرب',
+  'trainer5.achievement1': 'بطل الجزائر في الكيك بوكسينغ مرتين',
+  'trainer5.achievement2': 'بطل تونس في MMA لسنة 2022',
+  'trainer5.specialty1': 'فنون قتالية مختلطة MMA',
+
+  'trainer6.name': 'سليم بن عمر',
+  'trainer6.title': 'مساعد مدرب',
+
+  'trainer4.name': 'بولقرون برهان الدين',
+  'trainer4.title': 'مدرب',
+  'trainer4.achievement1': 'بطل أفريقيا للكيك بوكسينغ 2016',
+  'trainer4.achievement2': 'بطل الجزائر في الموساي تاي 2017',
+  'trainer4.specialty1': 'كيك بوكسينغ',
+  'trainer4.specialty2': 'مواي تاي',
       
       // Specialties Section
       'specialties.title': 'تخصصات التدريب',
@@ -229,7 +245,7 @@ const resources = {
       'policy.rightsAccess': 'يحق لك طلب الوصول إلى بياناتك الشخصية.',
       'policy.rightsCorrection': 'يحق لك تصحيح أو تحديث بياناتك.',
       'policy.rightsDelete': 'يحق لك طلب حذف بياناتك في أي وقت.',
-      'policy.lastUpdated': 'آخر تحديث: جويلية 2025',
+  'policy.lastUpdated': 'آخر تحديث: 12-09-2025',
       // Terms & Conditions
       'terms.title': 'الشروط والأحكام',
       'terms.intro': 'يرجى قراءة هذه الشروط بعناية قبل التسجيل أو استخدام خدماتنا. باستخدامك لموقعنا، فإنك توافق على هذه الشروط.',
@@ -246,7 +262,9 @@ const resources = {
       'terms.paymentDesc': 'يجب دفع الرسوم في المواعيد المحددة لضمان استمرار العضوية.',
       'terms.terminationTitle': 'إنهاء العضوية',
       'terms.terminationDesc': 'يحق للنادي إنهاء العضوية في حال مخالفة الشروط أو السلوك غير اللائق.',
-      'terms.lastUpdated': 'آخر تحديث: جويلية 2025',
+  'terms.contentResponsibilityTitle': 'مسؤولية المحتوى',
+  'terms.contentResponsibilityDesc': 'المطور غير مسؤول عن أي معلومات أو محتوى منشور على هذا الموقع. جميع المعلومات والمحتويات مقدمة ومسؤولة عنها إدارة النادي/مالك الموقع.',
+  'terms.lastUpdated': 'آخر تحديث: 12-09-2025',
 
       'footer.description': 'تدريب احترافي في الفنون القتالية و اللياقة البدنية، إنضم إلى عالم المحاربين معنا IRBT',
       'footer.quickLinks': 'روابط سريعة',
@@ -297,7 +315,15 @@ const resources = {
       '': '',
       '': '',
       '': '',
-      'validation.phoneNumber.min': 'مطلوب 10 أرقام',
+            'validation.phoneNumber.min': 'مطلوب 10 أرقام',
+      'validation.terms.required': 'يجب الموافقة على الشروط والأحكام',
+
+      // Registration terms
+      'register.acceptTerms': 'أوافق على ',
+      'register.and': 'و',
+      'register.termsDescription': 'بالموافقة، أؤكد أنني قرأت وفهمت وأوافق على الشروط والأحكام وسياسة الخصوصية للنادي',
+
+      // Days
     }
   },
    en: {
@@ -343,6 +369,19 @@ const resources = {
 
       'trainer3.name': 'Wael Daas',
       'trainer3.title': 'Assistant Coach',
+  'trainer5.name': 'Dahih Okba',
+  'trainer5.title': 'Coach',
+  'trainer5.achievement1': 'Two-time Algerian Kickboxing Champion',
+  'trainer5.achievement2': 'MMA Champion Tunisia 2022',
+  'trainer5.specialty1': 'MMA',
+  'trainer6.name': 'Slim Ben Omar',
+  'trainer6.title': 'Assistant Coach',
+  'trainer4.name': 'Boulgeroune Bourhan Eddine',
+  'trainer4.title': 'Head Coach',
+  'trainer4.achievement1': 'Kickboxing African Champion 2016',
+  'trainer4.achievement2': 'Muay Thai Algerian Champion 2017',
+  'trainer4.specialty1': 'Kickboxing',
+  'trainer4.specialty2': 'Muay Thai',
 
       // Specialties Section
       'specialties.title': 'Training Specialties',
@@ -514,7 +553,7 @@ const resources = {
       'policy.rightsAccess': 'You have the right to request access to your personal data.',
       'policy.rightsCorrection': 'You have the right to correct or update your data.',
       'policy.rightsDelete': 'You have the right to request deletion of your data at any time.',
-      'policy.lastUpdated': 'Last updated: July 2025',
+  'policy.lastUpdated': 'Last updated: 12-09-2025',
       // Terms & Conditions
       'terms.title': 'Terms & Conditions',
       'terms.intro': 'Please read these terms carefully before registering or using our services. By using our site, you agree to these terms.',
@@ -531,7 +570,9 @@ const resources = {
       'terms.paymentDesc': 'Fees must be paid on time to maintain membership.',
       'terms.terminationTitle': 'Membership Termination',
       'terms.terminationDesc': 'The club reserves the right to terminate membership for violations or inappropriate conduct.',
-      'terms.lastUpdated': 'Last updated: July 2025',
+  'terms.contentResponsibilityTitle': 'Content Responsibility',
+  'terms.contentResponsibilityDesc': 'The developer is not responsible for any information or content published on this site. All information and content are provided by and are the sole responsibility of the site owner/club management.',
+  'terms.lastUpdated': 'Last updated: 12-09-2025',
       'footer.description': 'IRBT Champion Club offers professional training in martial arts and fitness. Join a passionate community of fighters.',
       'footer.quickLinks': 'Quick Links',
       'footer.trainingPrograms': 'Training Programs',
@@ -568,6 +609,25 @@ const resources = {
       'experience.intermediate': 'Intermediate (3-5 years)',
       'experience.advanced': 'Advanced (5+ years)',
       'experience.professional': 'Professional/Competitive',
+
+      // Validation messages
+      'validation.firstName.min': 'At least 3 characters required',
+      'validation.lastName.min': 'At least 3 characters required',
+      'validation.placeOfBirth.min': 'At least 3 characters required',
+      'validation.age.range': 'Invalid age',
+      'validation.address.min': 'At least 10 characters required',
+      'validation.bloodType.min': 'This field is required',
+      'validation.gender.min': 'This field is required',
+      'validation.emergencyContact.min': '10 digits required',
+      'validation.specialty.min': 'This field is required',
+      'validation.experience.min': 'This field is required',
+      'validation.phoneNumber.min': '10 digits required',
+      'validation.terms.required': 'You must agree to the terms and conditions',
+
+      // Registration terms
+      'register.acceptTerms': 'I agree to',
+      'register.and': 'and',
+      'register.termsDescription': 'By agreeing, I confirm that I have read, understood, and agree to the club\'s terms and conditions and privacy policy',
     }
   }
 };
