@@ -55,14 +55,18 @@ const resources = {
       'trainer3.name': 'وائل دعاس',
       'trainer3.title': 'مساعد مدرب',
 
-  'trainer5.name': 'دحيح عقبة',
+  'trainer5.name': 'سداح عقبة',
   'trainer5.title': 'مدرب',
   'trainer5.achievement1': 'بطل الجزائر في الكيك بوكسينغ مرتين',
   'trainer5.achievement2': 'بطل تونس في MMA لسنة 2022',
   'trainer5.specialty1': 'فنون قتالية مختلطة MMA',
 
-  'trainer6.name': 'سليم بن عمر',
-  'trainer6.title': 'مساعد مدرب',
+  'trainer6.name': 'رافيق لهلور',
+  'trainer6.title': 'مدرب وطني',
+  'trainer6.achievement1': 'مدرب ملاكمة',
+  'trainer6.achievement2': 'مدرب كيك بوكسينغ',
+  'trainer6.specialty1': 'الملاكمة',
+  'trainer6.specialty2': 'الكيك بوكسينغ',
 
   'trainer4.name': 'بولقرون برهان الدين',
   'trainer4.title': 'مدرب',
@@ -272,6 +276,8 @@ const resources = {
       'footer.trainingPrograms': 'برامج التدريب',
       'footer.trainingHours': 'ساعات التدريب',
       'footer.followUs': 'تابعنا',
+  'footer.developedBy': 'تم التطوير بواسطة',
+  'footer.disclaimer': 'إخلاء المسؤولية',
       'footer.newsletter': 'ابق على اطلاع بآخر أخبارنا',
       'footer.newsletterDesc': 'كن أول من يعرف أخبار الحصص الجديدة والعروض الحصرية.',
       'footer.emailPlaceholder': 'أدخل بريدك الإلكتروني',
@@ -281,6 +287,13 @@ const resources = {
       'footer.by': 'بواسطة',
       'footer.privacyPolicy': 'سياسة الخصوصية',
       'footer.terms': 'شروط الخدمة',
+  // External link confirmation
+  'externalDisclaimer.title': 'تنبيه قبل الانتقال',
+  'externalDisclaimer.description': 'أنت على وشك الخروج إلى موقع خارجي (إنستغرام: Divnest). قبل المتابعة، يرجى ملاحظة ما يلي:',
+  'externalDisclaimer.ownerProvided': 'جميع المعلومات في هذا الموقع مقدمة ومسؤولة عنها إدارة النادي/مالك الموقع.',
+  'externalDisclaimer.noResponsibility': 'المطور غير مسؤول عن أي معلومات منشورة هنا أو تبعات استخدامها.',
+  'externalDisclaimer.accept': 'قرأتُ وأفهم — متابعة',
+  'externalDisclaimer.cancel': 'البقاء في الموقع',
       
       // Days
       'monday': 'الاثنين',
@@ -322,7 +335,15 @@ const resources = {
       // Registration terms
       'register.acceptTerms': 'أوافق على ',
       'register.and': 'و',
-      'register.termsDescription': 'بالموافقة، أؤكد أنني قرأت وفهمت وأوافق على الشروط والأحكام وسياسة الخصوصية للنادي',
+      'register.termsDescription': 'بالموافقة، أؤكد أنني قرأت وفهمت وأوافق على الشروط والأحكام، إخلاء المسؤولية وسياسة الخصوصية للنادي',
+
+  // Disclaimer page
+  'disclaimer.title': 'إخلاء المسؤولية',
+  'disclaimer.intro': 'هذا الموقع يهدف لتقديم معلومات عامة عن النادي وخدماته.',
+  'disclaimer.ownerProvided': 'جميع المعلومات الواردة في هذا الموقع مقدمة ومسؤولة عنها إدارة النادي/مالك الموقع.',
+  'disclaimer.noResponsibility': 'المطور غير مسؤول عن أي معلومات، تصريحات، دقة أو تحديث للمحتوى المنشور، ولا يتحمل أي تبعات قانونية مترتبة عن ذلك.',
+  'disclaimer.contact': 'للاستفسارات أو تصحيح أي معلومات، يرجى التواصل مع إدارة النادي مباشرة.',
+  'disclaimer.lastUpdated': 'آخر تحديث: 24-10-2025',
 
       // Days
     }
@@ -371,13 +392,17 @@ const resources = {
 
       'trainer3.name': 'Wael Daas',
       'trainer3.title': 'Assistant Coach',
-  'trainer5.name': 'Dahih Okba',
+  'trainer5.name': 'Sdah Okba',
   'trainer5.title': 'Coach',
   'trainer5.achievement1': 'Two-time Algerian Kickboxing Champion',
   'trainer5.achievement2': 'MMA Champion Tunisia 2022',
   'trainer5.specialty1': 'MMA',
-  'trainer6.name': 'Slim Ben Omar',
-  'trainer6.title': 'Assistant Coach',
+  'trainer6.name': 'Rafik Lahlour',
+  'trainer6.title': 'National Coach',
+  'trainer6.achievement1': 'Boxing Coach',
+  'trainer6.achievement2': 'Kickboxing Coach',
+  'trainer6.specialty1': 'Boxing',
+  'trainer6.specialty2': 'Kickboxing',
   'trainer4.name': 'Boulgeroune Bourhan Eddine',
   'trainer4.title': 'Head Coach',
   'trainer4.achievement1': 'Kickboxing African Champion 2016',
@@ -580,6 +605,8 @@ const resources = {
       'footer.trainingPrograms': 'Training Programs',
       'footer.trainingHours': 'Training Hours',
       'footer.followUs': 'Follow Us',
+  'footer.developedBy': 'Under developed by',
+  'footer.disclaimer': 'Disclaimer',
       'footer.newsletter': 'STAY UPDATED WITH OUR LATEST NEWS',
       'footer.newsletterDesc': 'Get first-hand updates on new classes, events, and exclusive offers.',
       'footer.emailPlaceholder': 'Enter your email',
@@ -589,6 +616,13 @@ const resources = {
       'footer.by': 'by',
       'footer.privacyPolicy': 'Privacy Policy',
       'footer.terms': 'Terms of Service',
+  // External link confirmation
+  'externalDisclaimer.title': 'Before you go',
+  'externalDisclaimer.description': 'You are about to leave to an external site (Instagram: Divnest). Before proceeding, please note:',
+  'externalDisclaimer.ownerProvided': 'All information on this website is provided by and is the responsibility of the website owner/club management.',
+  'externalDisclaimer.noResponsibility': 'The developer is not responsible for any information published here or any consequences of its use.',
+  'externalDisclaimer.accept': 'I have read and understand — Continue',
+  'externalDisclaimer.cancel': 'Stay on site',
 
       // Days
       'monday': 'Monday',
@@ -629,7 +663,15 @@ const resources = {
       // Registration terms
       'register.acceptTerms': 'I agree to',
       'register.and': 'and',
-      'register.termsDescription': 'By agreeing, I confirm that I have read, understood, and agree to the club\'s terms and conditions and privacy policy',
+  'register.termsDescription': 'By agreeing, I confirm that I have read, understood, and agree to the club\'s Terms & Conditions, Privacy Policy, and Disclaimer',
+
+  // Disclaimer page
+  'disclaimer.title': 'Disclaimer',
+  'disclaimer.intro': 'This website provides general information about the club and its services.',
+  'disclaimer.ownerProvided': 'All information on this site is provided by and is the responsibility of the website owner/club management.',
+  'disclaimer.noResponsibility': 'The developer is not responsible for the accuracy, completeness, or timeliness of the content and bears no legal liability for it.',
+  'disclaimer.contact': 'For inquiries or corrections, please contact the club management directly.',
+  'disclaimer.lastUpdated': 'Last updated: 24-10-2025',
     }
   }
 };
