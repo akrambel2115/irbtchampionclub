@@ -14,7 +14,7 @@ function AnimatedBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Simplified gradient background - removed dynamic animations */}
-      <div className="absolute inset-0 opacity-15" 
+      <div className="absolute inset-0 opacity-15 hidden md:block" 
            style={{
              background: 'linear-gradient(-45deg, #000000, #1a0000, #000000, #1a1a00)',
              backgroundSize: '400% 400%',
