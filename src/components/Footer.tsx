@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import React from "react";
 import {
     MapPin,
     Phone,
@@ -10,11 +11,38 @@ import {
     Instagram,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const [confirmOpen, setConfirmOpen] = React.useState(false);
+  const allowCloseRef = React.useRef(false);
+  const externalUrl = "https://www.instagram.com/divnest/";
+
+  const openConfirm = () => {
+    allowCloseRef.current = false;
+    setConfirmOpen(true);
+  };
+  const proceedToExternal = () => {
+    allowCloseRef.current = true;
+    setConfirmOpen(false);
+    window.open(externalUrl, "_blank", "noopener,noreferrer");
+  };
+  const cancelConfirm = () => {
+    allowCloseRef.current = true;
+    setConfirmOpen(false);
+  };
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -49,6 +77,7 @@ const Footer = () => {
   ];
 
   return (
+    <>
     <footer className="bg-gradient-to-t from-black to-gray-900 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 boxing-pattern opacity-5"></div>
@@ -229,15 +258,14 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center space-x-2 text-gray-400 text-sm">
-              <span>{t("footer.madeWith")}</span>
-              <span className="text-red-600">❤️</span>
-              <span>{t("footer.by")}</span>
-              <a
-                href="https://www.instagram.com/divnest/"
-                className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200 font-semibold"
+              <span>{t("footer.developedBy")}</span>
+              <button
+                type="button"
+                onClick={openConfirm}
+                className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200 font-semibold underline-offset-2 hover:underline"
               >
                 Divnest
-              </a>
+              </button>
             </div>
 
             <div className="flex text-sm">
@@ -249,15 +277,52 @@ const Footer = () => {
               </Link>
               <Link
                 to="/TermsAndConditions"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-gray-400 hover:text-white transition-colors duration-200 ml-2"
               >
                 {t("footer.terms")}
+              </Link>
+              <Link
+                to="/Disclaimer"
+                className="text-gray-400 hover:text-white transition-colors duration-200 ml-2"
+              >
+                {t("footer.disclaimer")}
               </Link>
             </div>
           </div>
         </motion.div>
       </div>
     </footer>
+    {/* Non-skippable disclaimer popup for external link */}
+    <AlertDialog
+      open={confirmOpen}
+      onOpenChange={(next) => {
+        // Prevent closing by outside click or ESC unless explicitly allowed
+        if (!next && !allowCloseRef.current) {
+          setConfirmOpen(true);
+        } else {
+          setConfirmOpen(next);
+          if (!next) allowCloseRef.current = false;
+        }
+      }}
+    >
+      <AlertDialogContent className="max-w-lg">
+        <AlertDialogHeader>
+          <AlertDialogTitle>{t("externalDisclaimer.title")}</AlertDialogTitle>
+          <AlertDialogDescription>
+            {t("externalDisclaimer.description")}
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <div className="text-sm text-gray-400 space-y-2">
+          <p>• {t("externalDisclaimer.ownerProvided")}</p>
+          <p>• {t("externalDisclaimer.noResponsibility")}</p>
+        </div>
+        <AlertDialogFooter>
+          <AlertDialogCancel onClick={cancelConfirm}>{t("externalDisclaimer.cancel")}</AlertDialogCancel>
+          <AlertDialogAction onClick={proceedToExternal}>{t("externalDisclaimer.accept")}</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+    </>
   );
 };
 
