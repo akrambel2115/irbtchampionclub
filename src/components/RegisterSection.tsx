@@ -462,6 +462,15 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
                             >
                               {t('footer.privacyPolicy')}
                             </Link>
+                            {t('register.and')}
+                            <Link
+                              to="/Disclaimer"
+                              className="text-red-400 hover:text-red-300 underline mx-1"
+                              onClick={(e) => e.stopPropagation()}
+                              onMouseDown={(e) => e.preventDefault()}
+                            >
+                              {t('footer.disclaimer')}
+                            </Link>
                             *
                           </FormLabel>
                           <p className="text-xs text-gray-400">
