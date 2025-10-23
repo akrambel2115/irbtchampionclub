@@ -158,21 +158,21 @@ const TrainersSection = () => {
       title: t("trainer5.title"),
       experience: "21 " + t("trainers.experience"),
       image: "/images/d7i7.jpg",
-      // Slight internal shrink to make photo appear smaller inside the fixed circle
       imageScale: 'scale-90 md:scale-95',
       achievements: [t("trainer5.achievement1"), t("trainer5.achievement2")],
       specialties: [t("trainer5.specialty1")],
     },
+    {
+      name: t("trainer6.name"),
+      title: t("trainer6.title"),
+  experience: "19 " + t("trainers.experience"),
+      image: "/images/rafik.jpg",
+      achievements: [t("trainer6.achievement1"), t("trainer6.achievement2")],
+      specialties: [t("trainer6.specialty1"), t("trainer6.specialty2")],
+    }
   ], [t]);
 
   const assistants = React.useMemo(() => [
-    {
-      name: t("trainer3.name"),
-      title: t("trainer3.title"),
-      image: "/images/ouail.png",
-      achievements: [],
-      specialties: [],
-    },
     {
       name: "سعد بوزيد",
       title: "مساعد مدرب",
