@@ -55,6 +55,12 @@ const resources = {
       'trainer3.name': 'وائل دعاس',
       'trainer3.title': 'مساعد مدرب',
 
+  'assistant1.name': 'سيف قيوش',
+  'assistant1.title': 'مدرب',
+  'assistant1.achievement1': 'بطل الجزائر 4 مرات فول كونتاكت والكيك بوكسينق',
+  'assistant1.specialty1': 'فول كونتاكت',
+  'assistant1.specialty2': 'كيك بوكسينق',
+
   'trainer5.name': 'سداح عقبة',
   'trainer5.title': 'مدرب',
   'trainer5.achievement1': 'بطل الجزائر في الكيك بوكسينغ مرتين',
@@ -392,6 +398,13 @@ const resources = {
 
       'trainer3.name': 'Wael Daas',
       'trainer3.title': 'Assistant Coach',
+
+  'assistant1.name': 'Seif Kayouch',
+  'assistant1.title': 'Kickboxing Coach',
+  'assistant1.achievement1': '4-time Algerian Full Contact and Kickboxing Champion',
+  'assistant1.specialty1': 'Full Contact',
+  'assistant1.specialty2': 'Kickboxing',
+
   'trainer5.name': 'Sdah Okba',
   'trainer5.title': 'Coach',
   'trainer5.achievement1': 'Two-time Algerian Kickboxing Champion',
