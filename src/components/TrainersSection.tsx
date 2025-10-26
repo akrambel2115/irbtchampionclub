@@ -138,7 +138,7 @@ const TrainersSection = () => {
     {
       name: t("trainer4.name"),
       title: t("trainer4.title"),
-      experience: "20 " + t("trainers.experience"),
+      experience: "12 " + t("trainers.experience"),
   image: "/images/boulegroune.jpg",
   // Static internal zoom (no hover scaling)
   imageScale: 'scale-[1.55] md:scale-[1.9]',
@@ -169,17 +169,18 @@ const TrainersSection = () => {
       image: "/images/rafik.jpg",
       achievements: [t("trainer6.achievement1"), t("trainer6.achievement2")],
       specialties: [t("trainer6.specialty1"), t("trainer6.specialty2")],
+    },
+    {
+      name: t("assistant1.name"),
+      title: t("assistant1.title"),
+      experience: "11 " + t("trainers.experience"),
+      image: "/images/seif.jpg",
+      achievements: [t("assistant1.achievement1")],
+      specialties: [t("assistant1.specialty1"), t("assistant1.specialty2")],
     }
   ], [t]);
 
   const assistants = React.useMemo(() => [
-    {
-      name: "سعد بوزيد",
-      title: "مساعد مدرب",
-      image: "/images/bouzid.jpg",
-      achievements: [],
-      specialties: [],
-    },
   ], [t]);
 
   // Flatten for glare triggers and animation sequencing
