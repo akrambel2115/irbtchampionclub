@@ -143,7 +143,7 @@ const HeroSection = () => {
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 0 }}
                 >
-                  <CountUp end={140} suffix="+" duration={4.5} enableScrollSpy />
+                  <CountUp end={400} suffix="+" duration={4.5} enableScrollSpy />
                 </motion.div>
                 <div className="text-gray-400 text-sm">{t('hero.stats.members')}</div>
               </motion.div>
@@ -171,13 +171,42 @@ const HeroSection = () => {
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 2 }}
                 >
-                  <CountUp end={9} duration={4.5} enableScrollSpy scrollSpyDelay={800} />
+                  <CountUp end={12} duration={4.5} enableScrollSpy scrollSpyDelay={800} />
                 </motion.div>
                 <div className="text-gray-400 text-sm">{t('hero.stats.experience')}</div>
               </motion.div>
             </motion.div>
 
             {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="pb-6"
+            >
+              <Button
+                onClick={scrollToRegister}
+                size="lg"
+                className="bg-gradient-red-gold hover:scale-110 transition-all duration-300 text-white font-bold text-lg md:text-xl px-8 md:px-12 py-6 md:py-8 rounded-full shadow-2xl pulse-glow ring-4 ring-yellow-500/50 hover:ring-yellow-500/80 relative overflow-hidden group"
+                aria-label={t('hero.cta') + " - " + t('nav.register')}
+              >
+                <span className="relative z-10 flex items-center gap-3">
+                  {t('hero.cta')}
+                  <ArrowRight className="h-6 w-6 md:h-7 md:w-7 group-hover:translate-x-2 transition-transform duration-300" />
+                </span>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-red-600 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  animate={{
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </Button>
+            </motion.div>
 
           </motion.div>
         </div>
