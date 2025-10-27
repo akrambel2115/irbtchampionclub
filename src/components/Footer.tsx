@@ -264,7 +264,7 @@ const Footer = () => {
                 onClick={openConfirm}
                 className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200 font-semibold underline-offset-2 hover:underline"
               >
-                Divnest
+                 &nbsp;Divnest 
               </button>
             </div>
 
