@@ -65,7 +65,7 @@ const TrainerCard = React.memo(function TrainerCard(props: TrainerCardProps) {
             <Trophy className="h-6 w-6 text-white" />
           </div>
         </div>
-          imageScale: "scale-110 md:scale-125",
+        {/* Trainer Info */}
         <div className="text-center mb-6">
           <h3 className="font-bebas text-3xl text-white mb-2">{trainer.name}</h3>
           <p className="text-red-400 font-medium text-lg mb-3">{trainer.title}</p>
@@ -74,7 +74,7 @@ const TrainerCard = React.memo(function TrainerCard(props: TrainerCardProps) {
               <Star className="h-4 w-4 mr-2" />
               {trainer.experience}
             </Badge>
-             imageScale: 'scale-110 md:scale-125',
+          )}
         </div>
         {/* Achievements */}
         {trainer.achievements && trainer.achievements.length > 0 && (
@@ -171,6 +171,7 @@ const TrainersSection = () => {
       title: t("trainer6.title"),
   experience: "19 " + t("trainers.experience"),
       image: "/images/rafik.jpg",
+      imageScale: 'scale-110 md:scale-[1.15]',
       achievements: [t("trainer6.achievement1"), t("trainer6.achievement2")],
       specialties: [t("trainer6.specialty1"), t("trainer6.specialty2")],
     },
@@ -179,6 +180,7 @@ const TrainersSection = () => {
       title: t("assistant1.title"),
       experience: "11 " + t("trainers.experience"),
       image: "/images/seif.jpg",
+      imageScale: 'scale-110 md:scale-[1.15]',
       achievements: [t("assistant1.achievement1")],
       specialties: [t("assistant1.specialty1"), t("assistant1.specialty2")],
     }
