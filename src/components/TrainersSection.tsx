@@ -53,7 +53,7 @@ const TrainerCard = React.memo(function TrainerCard(props: TrainerCardProps) {
             <img
               src={trainer.image}
               alt={trainer.name}
-                className={`w-full h-full object-cover ${trainer.imagePosition || 'object-center'} transform ${trainer.imageScale || ''} ${trainer.name === t('trainer4.name') ? 'mt-6' : ''} ${trainer.name === t('trainer5.name') ? 'mt-2' : ''}`}
+                className={`w-full h-full object-cover ${trainer.imagePosition || 'object-center'} transform ${trainer.imageScale || ''} ${trainer.name === t('trainer4.name') ? 'mt-5' : ''} ${trainer.name === t('trainer5.name') ? 'mt-1' : ''}`}
               loading="lazy"
               decoding="async"
               width={192}
@@ -65,7 +65,7 @@ const TrainerCard = React.memo(function TrainerCard(props: TrainerCardProps) {
             <Trophy className="h-6 w-6 text-white" />
           </div>
         </div>
-        {/* Trainer Info */}
+          imageScale: "scale-110 md:scale-125",
         <div className="text-center mb-6">
           <h3 className="font-bebas text-3xl text-white mb-2">{trainer.name}</h3>
           <p className="text-red-400 font-medium text-lg mb-3">{trainer.title}</p>
@@ -74,7 +74,7 @@ const TrainerCard = React.memo(function TrainerCard(props: TrainerCardProps) {
               <Star className="h-4 w-4 mr-2" />
               {trainer.experience}
             </Badge>
-          )}
+             imageScale: 'scale-110 md:scale-125',
         </div>
         {/* Achievements */}
         {trainer.achievements && trainer.achievements.length > 0 && (
@@ -153,7 +153,7 @@ const TrainersSection = () => {
       title: t("trainer2.title"),
       experience: "3 " + t("trainers.experience"),
       image: "/images/tasnim.png",
-      imageScale: 'scale-110 md:scale-125',
+  imageScale: 'scale-125 md:scale-[1.35]',
       achievements: [t("trainer2.achievement1"), t("trainer2.achievement2")], 
       specialties: [t("trainer2.specialty1"), t("trainer2.specialty2")],
     },
