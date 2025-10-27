@@ -496,29 +496,6 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
           </Card>
         </motion.div>
       </div>
-
-      {/* Floating Registration Button with Magnet Animation */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <Magnet
-          magnetStrength={1}
-          padding={50}
-          activeTransition="transform 0.2s ease-out"
-          inactiveTransition="transform 0.4s ease-in-out"
-        >
-          <Button
-            onClick={() => {
-              document.getElementById('register-section')?.scrollIntoView({ 
-                behavior: 'smooth' 
-              });
-            }}
-            size="lg"
-            className="bg-gradient-red-gold hover:scale-110 transition-all duration-300 pulse-glow shadow-2xl rounded-full px-4 py-2"
-          >
-            <span className="font-bebas text-lg">{t("nav.joinNow")}</span>
-
-          </Button>
-        </Magnet>
-      </div>
     </section>
   );
 };
