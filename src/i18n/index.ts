@@ -24,7 +24,7 @@ const resources = {
       'hero.stats.members': 'متدرب',
       'hero.stats.trainers': 'مدربين',
       'hero.stats.experience': 'سنوات خبرة',
-      'hero.cta': 'ابدأ رحلتك',
+      'hero.cta': 'سجل هنا',
   'hero.extraLine': 'يد واحدة تاورتنا أجمل',
       
       // Trainers Section
@@ -67,7 +67,7 @@ const resources = {
   'trainer5.achievement2': 'بطل تونس في MMA لسنة 2022',
   'trainer5.specialty1': 'فنون قتالية مختلطة MMA',
 
-  'trainer6.name': 'رافيق لهلور',
+  'trainer6.name': 'رفيق لهلور',
   'trainer6.title': 'مدرب وطني',
   'trainer6.achievement1': 'مدرب ملاكمة',
   'trainer6.achievement2': 'مدرب كيك بوكسينغ',
