@@ -15,6 +15,8 @@ interface TrainerCardProps {
     image: string;
     imageSize?: string;
     imageScale?: string;
+    imagePosition?: string;
+    imageBg?: string;
     achievements: string[];
     specialties: string[];
   };
@@ -47,11 +49,11 @@ const TrainerCard = React.memo(function TrainerCard(props: TrainerCardProps) {
       >
         {/* Trainer Image */}
           <div className="relative mb-8">
-          <div className={`${trainer.imageSize || 'w-48 h-48'} mx-auto rounded-full overflow-hidden border-4 border-red-600`}>
+          <div className={`${trainer.imageSize || 'w-48 h-48'} mx-auto rounded-full overflow-hidden border-4 border-red-600 ${trainer.imageBg || ''}`}>
             <img
               src={trainer.image}
               alt={trainer.name}
-              className={`w-full h-full object-cover transform ${trainer.imageScale || ''}`}
+                className={`w-full h-full object-cover ${trainer.imagePosition || 'object-center'} transform ${trainer.imageScale || ''} ${trainer.name === t('trainer4.name') ? 'mt-6' : ''} ${trainer.name === t('trainer5.name') ? 'mt-2' : ''}`}
               loading="lazy"
               decoding="async"
               width={192}
@@ -140,8 +142,9 @@ const TrainersSection = () => {
       title: t("trainer4.title"),
       experience: "12 " + t("trainers.experience"),
   image: "/images/boulegroune.jpg",
-  // Static internal zoom (no hover scaling)
-  imageScale: 'scale-[1.55] md:scale-[1.9]',
+      imageBg: 'bg-black',
+  imageScale: 'scale-125 md:scale-[1.35]',
+  imagePosition: 'object-bottom',
       achievements: [t("trainer4.achievement1"), t("trainer4.achievement2")],
       specialties: [t("trainer4.specialty1"), t("trainer4.specialty2")],
     },
@@ -150,15 +153,16 @@ const TrainersSection = () => {
       title: t("trainer2.title"),
       experience: "3 " + t("trainers.experience"),
       image: "/images/tasnim.png",
-      achievements: [t("trainer2.achievement1"), t("trainer2.achievement2")],
+      imageScale: 'scale-110 md:scale-125',
+      achievements: [t("trainer2.achievement1"), t("trainer2.achievement2")], 
       specialties: [t("trainer2.specialty1"), t("trainer2.specialty2")],
     },
     {
       name: t("trainer5.name"),
       title: t("trainer5.title"),
-      experience: "21 " + t("trainers.experience"),
+      experience: "8 " + t("trainers.experience"),
       image: "/images/d7i7.jpg",
-      imageScale: 'scale-90 md:scale-95',
+      imageScale: 'scale-[0.85] md:scale-90',
       achievements: [t("trainer5.achievement1"), t("trainer5.achievement2")],
       specialties: [t("trainer5.specialty1")],
     },
