@@ -79,12 +79,6 @@ const Navbar = () => {
                 </motion.button>
               ))}
               <LanguageSwitcher />
-              <Button
-                onClick={() => scrollToSection('#register')}
-                className="bg-gradient-red-gold hover:scale-105 transition-transform duration-200 pulse-glow"
-              >
-                {t('nav.joinNow')}
-              </Button>
             </div>
           </div>
 
@@ -129,12 +123,6 @@ const Navbar = () => {
               <div className="flex justify-center w-full my-2">
                 <LanguageSwitcher isMobile={true} />
               </div>
-                <Button
-                  onClick={() => scrollToSection('#register')}
-                  className="bg-gradient-red-gold w-full mt-4"
-                >
-                  {t('nav.joinNow')}
-                </Button>
             </div>
           </motion.div>
         )}
