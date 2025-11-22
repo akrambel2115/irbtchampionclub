@@ -136,14 +136,14 @@ const HeroSection = () => {
               <motion.div
                 className="text-center"
                 whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 500 }}
+                transition={{ type: "spring", stiffness: 400 }}
               >
                 <motion.div
                   className="font-bebas text-3xl md:text-4xl text-red-600"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 0 }}
                 >
-                  <CountUp end={400} suffix="+" duration={4.5} enableScrollSpy />
+                  <CountUp end={500} suffix="+" duration={4.5} enableScrollSpy />
                 </motion.div>
                 <div className="text-gray-400 text-sm">{t('hero.stats.members')}</div>
               </motion.div>
