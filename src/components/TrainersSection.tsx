@@ -153,8 +153,13 @@ const TrainersSection = () => {
       title: t("trainer2.title"),
       experience: "3 " + t("trainers.experience"),
       image: "/images/tasnim.png",
-  imageScale: 'scale-125 md:scale-[1.35]',
-      achievements: [t("trainer2.achievement1"), t("trainer2.achievement2")], 
+      imageScale: 'scale-125 md:scale-[1.35]',
+      achievements: [
+        t("trainer2.achievement1"),
+        t("trainer2.achievement2"),
+        t("trainer2.achievement3"),
+        t("trainer2.achievement4"),
+      ],
       specialties: [t("trainer2.specialty1"), t("trainer2.specialty2")],
     },
     {

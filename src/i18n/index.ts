@@ -21,11 +21,11 @@ const resources = {
       'hero.title1': 'أطلق العنان لـ',
       'hero.title2': 'المحارب بداخلك',
       'hero.description': 'اكتشف قدراتك — تدريب احترافي في الملاكمة، والفنون القتالية المختلطة، واللياقة البدنية بقيادة مدربين من النخبة.',
-      'hero.stats.members': 'متدرب',
+      'hero.stats.members': 'متدربين',
       'hero.stats.trainers': 'مدربين',
       'hero.stats.experience': 'سنوات خبرة',
       'hero.cta': 'سجل هنا',
-  'hero.extraLine': 'يد واحدة تاورتنا أجمل',
+      'hero.extraLine': 'يد وحدة باتنتنا أجمل',
       
       // Trainers Section
       'trainers.title': 'تعرف على مدربينا',
@@ -36,7 +36,7 @@ const resources = {
       
       // Trainer Data
       'trainer.name': 'أسامة طبيب',
-      'trainer.title': 'مدير أكادمية IRBT و مدرب رئيسي',
+      'trainer.title': 'مدير أكاديمية TI9A و مدرب رئيسي',
       'trainer.achievement1': 'أصغر مدرب ملاكمة معترف به من الفيديرالية الجزائرية',
       'trainer.achievement2': 'متحصل على رخصة ملاكم محترف و أصغر مدرب وطني لأول مرة في تاريخ الرياضة القتالية',
       'trainer.achievement3': 'بطل تونس للملاكمة في فئة الهواة وزن 70كغ (2023)',
@@ -45,12 +45,14 @@ const resources = {
       'trainer.specialty2': 'كيك بوكسينغ',
       'trainer.specialty3': 'كارديو و فيزيك / أيروبيك',
 
-      'trainer2.name': 'رحماني إيمان',
+      'trainer2.name': 'محمدي فاطمة الزهراء',
       'trainer2.title': 'مدربة النساء',
-      'trainer2.achievement1': 'شهادة مدربة نساء كارديو و فيزيك (أيروبيك)',
-      'trainer2.achievement2': 'شهادة مساعدة مدرب رئيسي',
-      'trainer2.specialty1': 'كارديو و لياقة بدنية',
-      'trainer2.specialty2': 'أيروبيك',
+      'trainer2.achievement1': 'متحصلة على شهادة ليسانس من معهد علوم وتقنيات الأنشطة البدنية والرياضية - باتنة',
+      'trainer2.achievement2': 'متخصصة في التدريب التنافسي',
+      'trainer2.achievement3': 'مدربة سباحة لمدة عام',
+      'trainer2.achievement4': 'مدربة ألعاب القوى لمدة 6 أشهر',
+      'trainer2.specialty1': 'سباحة',
+      'trainer2.specialty2': 'العاب القوى',
 
       'trainer3.name': 'وائل دعاس',
       'trainer3.title': 'مساعد مدرب',
@@ -277,7 +279,7 @@ const resources = {
   'terms.contentResponsibilityDesc': 'المطور غير مسؤول عن أي معلومات أو محتوى منشور على هذا الموقع. جميع المعلومات والمحتويات مقدمة ومسؤولة عنها إدارة النادي/مالك الموقع.',
   'terms.lastUpdated': 'آخر تحديث: 12-09-2025',
 
-      'footer.description': 'تدريب احترافي في الفنون القتالية و اللياقة البدنية، إنضم إلى عالم المحاربين معنا IRBT',
+      'footer.description': 'تدريب احترافي في الفنون القتالية و اللياقة البدنية، إنضم إلى عالم المحاربين معنا TI9A',
       'footer.quickLinks': 'روابط سريعة',
       'footer.trainingPrograms': 'برامج التدريب',
       'footer.trainingHours': 'ساعات التدريب',
@@ -332,10 +334,7 @@ const resources = {
       'validation.emergencyContact.min': 'مطلوب 10 أرقام',
       'validation.specialty.min': 'هذا الحقل اجباري',
       'validation.experience.min': 'هذا الحقل اجباري',
-      '': '',
-      '': '',
-      '': '',
-            'validation.phoneNumber.min': 'مطلوب 10 أرقام',
+      'validation.phoneNumber.min': 'مطلوب 10 أرقام',
       'validation.terms.required': 'يجب الموافقة على الشروط والأحكام',
 
       // Registration terms
@@ -368,11 +367,11 @@ const resources = {
       'hero.title1': 'Unleash',
       'hero.title2': 'The Warrior Within',
       'hero.description': 'Discover your capabilities — professional training in boxing, mixed martial arts, and fitness led by elite coaches.',
-      'hero.stats.members': 'Trainee',
-      'hero.stats.trainers': 'Expert Trainer',
+       'hero.stats.members': 'Trainees',
+       'hero.stats.trainers': 'Trainers',
       'hero.stats.experience': 'Years of Experience',
       'hero.cta': 'Start Your Journey',
-  'hero.extraLine': 'One hand makes our Taoura more beautiful',
+    'hero.extraLine': 'Together, Batna is more beautiful',
 
       // Trainers Section
       'trainers.title': 'Meet Our Trainers',
@@ -383,7 +382,7 @@ const resources = {
 
       // Trainer Data
       'trainer.name': 'Oussama Tabib',
-      'trainer.title': 'Head Trainer',
+      'trainer.title': 'Head Trainer at TI9A Academy',
       'trainer.achievement1': 'Youngest recognized trainer in Algeria',
       'trainer.achievement2': 'Obtained an official license as a boxer from the Algerian Boxing Federation',
       'trainer.achievement3': 'Tunisian Boxing Champion in the amateur category, 70kg (2023)',
@@ -393,8 +392,14 @@ const resources = {
       'trainer.specialty3': 'Aerobics',
 
       // Trainer Data
-      'trainer2.name': 'Tasnim Hamaydia',
-      'trainer2.title': 'Women\'s Trainer',
+      'trainer2.name': 'Mohammedi Fatima Zahra',
+      'trainer2.title': 'Women\'s Coach',
+      'trainer2.achievement1': 'Bachelor\'s degree from the Institute of Physical and Sports Sciences and Technologies, Batna',
+      'trainer2.achievement2': 'Specialized in competitive training',
+      'trainer2.achievement3': 'Swimming coach for 1 year',
+      'trainer2.achievement4': 'Athletics coach for 6 months',
+      'trainer2.specialty1': 'Swimming',
+      'trainer2.specialty2': 'Athletics',
 
       'trainer3.name': 'Wael Daas',
       'trainer3.title': 'Assistant Coach',
@@ -526,7 +531,7 @@ const resources = {
       'gallery.view': 'View',
 
       // Registration Section
-      'register.title': 'JOIN IRBT Champion CLUB',
+      'register.title': 'JOIN TI9A Champion CLUB',
       'register.description': 'Take your first step to transformation. Fill the form and join the club.',
       'register.firstName': 'First Name',
       'register.lastName': 'Last Name',
@@ -613,7 +618,7 @@ const resources = {
   'terms.contentResponsibilityTitle': 'Content Responsibility',
   'terms.contentResponsibilityDesc': 'The developer is not responsible for any information or content published on this site. All information and content are provided by and are the sole responsibility of the site owner/club management.',
   'terms.lastUpdated': 'Last updated: 12-09-2025',
-      'footer.description': 'IRBT Champion Club offers professional training in martial arts and fitness. Join a passionate community of fighters.',
+      'footer.description': 'TI9A Champion Club offers professional training in martial arts and fitness. Join a passionate community of fighters.',
       'footer.quickLinks': 'Quick Links',
       'footer.trainingPrograms': 'Training Programs',
       'footer.trainingHours': 'Training Hours',

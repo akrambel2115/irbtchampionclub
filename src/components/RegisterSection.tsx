@@ -155,7 +155,7 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
                 {t('register.form.title')}
               </CardTitle>
               <p className="font-bebas text-sm text-center text-gray-400 uppercase tracking-wide">
-                IRBT CHAMPION CLUB
+                TI9A CHAMPION CLUB
               </p>
             </CardHeader>
             <CardContent>
