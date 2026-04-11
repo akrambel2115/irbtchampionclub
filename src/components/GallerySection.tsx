@@ -18,6 +18,7 @@ const GallerySection = () => {
     { id: 6, src: "/images/pic8.jpg" },
     { id: 7, src: "/images/pic9.jpg" },
     { id: 8, src: "/images/pic10.jpg" },
+    { id: 9, src: "/images/pic11.png" },
   ];
 
   // Advanced Orbital Gallery Component (optimized for performance)
