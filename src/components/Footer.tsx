@@ -11,38 +11,9 @@ import {
     Instagram,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
-
-
 const Footer = () => {
   const { t, i18n } = useTranslation();
   const currentYear = new Date().getFullYear();
-  const [confirmOpen, setConfirmOpen] = React.useState(false);
-  const allowCloseRef = React.useRef(false);
-  const externalUrl = "https://www.instagram.com/divnest/";
-
-  const openConfirm = () => {
-    allowCloseRef.current = false;
-    setConfirmOpen(true);
-  };
-  const proceedToExternal = () => {
-    allowCloseRef.current = true;
-    setConfirmOpen(false);
-    window.open(externalUrl, "_blank", "noopener,noreferrer");
-  };
-  const cancelConfirm = () => {
-    allowCloseRef.current = true;
-    setConfirmOpen(false);
-  };
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -62,8 +33,8 @@ const Footer = () => {
   const specialties = [
     t("specialty.boxing.title"),
     t("specialty.kickboxing.title"),
-    t("specialty.muayThai.title"),
-    t("specialty.gym.title") + " (01/06/2026)",
+    t("specialty.judo.title"),
+    t("specialty.gym.title") + " (05/05/2027)",
     t("specialty.mma.title"),
     t("specialty.fitness.man.title"),
     t("specialty.fitness.woman.title"),
@@ -77,7 +48,6 @@ const Footer = () => {
   ];
 
   return (
-    <>
     <footer className="bg-gradient-to-t from-black to-gray-900 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 boxing-pattern opacity-5"></div>
@@ -104,7 +74,7 @@ const Footer = () => {
                   <path fill="url(#a)" d="M29.707,6.293l-4-4A1,1,0,0,0,25,2H24.1a1,1,0,0,0-.708.293L21,4.683a2.337,2.337,0,0,0-.523.213L20,5.173c-2.493,1.435-5.749,5.075-5.994,7.28a1,1,0,0,0,.044.424,8.892,8.892,0,0,0,4.9,5.03,1.027,1.027,0,0,0,.178.054A1.9,1.9,0,0,0,19.51,18a4.118,4.118,0,0,0,2.517-1.214l0.136,0.136a2.588,2.588,0,0,0,1.734.767A2.317,2.317,0,0,0,25.674,17l1.158-1.158a2.362,2.362,0,0,0,.682-1.5l0.254-3.479a2.476,2.476,0,0,0-.011-0.3l1.95-1.952A1,1,0,0,0,30,7.9V7A1,1,0,0,0,29.707,6.293Zm-4.188,7.9a0.359,0.359,0,0,1-.1.233l-1.159,1.159a0.4,0.4,0,0,1-.286.1,0.6,0.6,0,0,1-.4-0.183l-0.193-.192a7.668,7.668,0,0,0,.814-1.277,1,1,0,1,0-1.81-.852C21.82,14.395,20.167,15.939,19.571,16a6.9,6.9,0,0,1-3.537-3.534C16.4,11.079,18.862,8.135,21,6.907l0.482-.277a0.532,0.532,0,0,1,.613.133l3.5,3.5a0.589,0.589,0,0,1,.182.449ZM28,7.488L26.823,8.666,23.506,5.349c-0.057-.058-0.122-0.1-0.183-0.156L24.515,4h0.071L28,7.414V7.488Zm-14.945,6.6a1.027,1.027,0,0,0-.178-0.054,3.634,3.634,0,0,0-2.9,1.175l-0.136-.136A2.588,2.588,0,0,0,8.1,14.312,2.28,2.28,0,0,0,6.326,15L5.168,16.156a2.362,2.362,0,0,0-.682,1.5L4.231,21.14a2.476,2.476,0,0,0,.011.3l-1.95,1.952A1,1,0,0,0,2,24.1V25a1,1,0,0,0,.293.707l4,4A1,1,0,0,0,7,30H7.9a1,1,0,0,0,.708-0.293l2.387-2.389a2.344,2.344,0,0,0,.524-0.215L12,26.827c2.493-1.435,5.749-5.075,5.994-7.28a1,1,0,0,0-.044-0.424A8.892,8.892,0,0,0,13.055,14.093ZM7.485,28H7.414L4,24.586V24.512l1.177-1.178,3.316,3.318c0.058,0.058.124,0.1,0.186,0.153ZM11,25.093l-0.482.277a0.529,0.529,0,0,1-.613-0.133l-3.5-3.5a0.589,0.589,0,0,1-.182-0.449L6.481,17.8a0.359,0.359,0,0,1,.1-0.233l1.159-1.159a0.37,0.37,0,0,1,.267-0.1H8.027a0.6,0.6,0,0,1,.4.183l0.193,0.192A7.668,7.668,0,0,0,7.8,17.962a1,1,0,1,0,1.81.852c0.568-1.208,2.222-2.753,2.818-2.813a6.9,6.9,0,0,1,3.537,3.534C15.6,20.921,13.138,23.865,11,25.093ZM6.293,7.707A1,1,0,0,1,7.707,6.293l2,2A1,1,0,1,1,8.293,9.707ZM11,9V7a1,1,0,0,1,2,0V9A1,1,0,0,1,11,9ZM6,12a1,1,0,0,1,1-1H9a1,1,0,0,1,0,2H7A1,1,0,0,1,6,12ZM25.707,24.293a1,1,0,1,1-1.414,1.414l-2-2a1,1,0,0,1,1.414-1.414ZM26,20a1,1,0,0,1-1,1H23a1,1,0,0,1,0-2h2A1,1,0,0,1,26,20Zm-5,3v2a1,1,0,0,1-2,0V23A1,1,0,0,1,21,23Z" />
                 </svg>
                 <span className="font-bebas text-2xl text-gradient-red-gold">
-                  TI9A-CLUB-05
+                  KFG-SPORT
                 </span>
               </div>
 
@@ -142,7 +112,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center text-gray-400">
                   <Mail className="h-4 w-4 mr-3 text-red-600" />
-                  <span className="text-sm">ti9aclub05@gmail.com</span>
+                  <span className="text-sm">kfgsport05@gmail.com</span>
                 </div>
               </div>
             </motion.div>
@@ -256,18 +226,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm text-center md:text-left">
-              © {currentYear} TI9A-CLUB-05. {t("footer.copyright")}
-            </div>
-
-            <div className="flex items-center space-x-2 text-gray-400 text-sm">
-              <span>{t("footer.developedBy")}</span>
-              <button
-                type="button"
-                onClick={openConfirm}
-                className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200 font-semibold underline-offset-2 hover:underline"
-              >
-                 &nbsp;Divnest 
-              </button>
+              © {currentYear} KFG-SPORT. {t("footer.copyright")}
             </div>
 
             <div className="flex text-sm">
@@ -294,37 +253,6 @@ const Footer = () => {
         </motion.div>
       </div>
     </footer>
-    {/* Non-skippable disclaimer popup for external link */}
-    <AlertDialog
-      open={confirmOpen}
-      onOpenChange={(next) => {
-        // Prevent closing by outside click or ESC unless explicitly allowed
-        if (!next && !allowCloseRef.current) {
-          setConfirmOpen(true);
-        } else {
-          setConfirmOpen(next);
-          if (!next) allowCloseRef.current = false;
-        }
-      }}
-    >
-      <AlertDialogContent className="max-w-lg">
-        <AlertDialogHeader>
-          <AlertDialogTitle>{t("externalDisclaimer.title")}</AlertDialogTitle>
-          <AlertDialogDescription>
-            {t("externalDisclaimer.description")}
-          </AlertDialogDescription>
-        </AlertDialogHeader>
-        <div className="text-sm text-gray-400 space-y-2">
-          <p>• {t("externalDisclaimer.ownerProvided")}</p>
-          <p>• {t("externalDisclaimer.noResponsibility")}</p>
-        </div>
-        <AlertDialogFooter>
-          <AlertDialogCancel onClick={cancelConfirm}>{t("externalDisclaimer.cancel")}</AlertDialogCancel>
-          <AlertDialogAction onClick={proceedToExternal}>{t("externalDisclaimer.accept")}</AlertDialogAction>
-        </AlertDialogFooter>
-      </AlertDialogContent>
-    </AlertDialog>
-    </>
   );
 };
 

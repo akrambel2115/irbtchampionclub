@@ -65,7 +65,7 @@ const HeroSection = () => {
           <div className="md:hidden w-full flex justify-center pointer-events-none mt-0 mb-0 select-none">
             <img
               src="/images/logo.png"
-               alt="TI9A Champion Club Logo"
+               alt="KFG-SPORT Logo"
               className={`drop-shadow-lg ${isArabic ? "h-[55vw]" : "h-[48vw]"} w-auto`}
               style={{ maxWidth: '70vw' }}
               loading="lazy"
@@ -143,7 +143,7 @@ const HeroSection = () => {
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 0 }}
                 >
-                  <CountUp end={0} suffix="+" duration={4.5} enableScrollSpy />
+                  <CountUp end={70} suffix="+" duration={4.5} enableScrollSpy />
                 </motion.div>
                 <div className="text-gray-400 text-sm">{t('hero.stats.members')}</div>
               </motion.div>
@@ -157,7 +157,7 @@ const HeroSection = () => {
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                 >
-                  <CountUp end={5} duration={4.5} enableScrollSpy scrollSpyDelay={400} />
+                  <CountUp end={7} duration={4.5} enableScrollSpy scrollSpyDelay={400} />
                 </motion.div>
                 <div className="text-gray-400 text-sm">{t('hero.stats.trainers')}</div>
               </motion.div>

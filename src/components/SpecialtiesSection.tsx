@@ -60,18 +60,18 @@ const SpecialtiesSection = () => {
       image: "/images/kick.webp",
     },
     {
-      title: t("specialty.muayThai.title"),
-      icon: <Flame className="h-8 w-8" />,
-      description: t("specialty.muayThai.description"),
+      title: t("specialty.judo.title"),
+      icon: <Shield className="h-8 w-8" />,
+      description: t("specialty.judo.description"),
       features: [
-        t("specialty.muayThai.feature1"),
-        t("specialty.muayThai.feature2"),
-        t("specialty.muayThai.feature3"),
-        t("specialty.muayThai.feature4"),
+        t("specialty.judo.feature1"),
+        t("specialty.judo.feature2"),
+        t("specialty.judo.feature3"),
+        t("specialty.judo.feature4"),
       ],
       forMen: true,
       forWomen: true,
-      image: "/images/muaythai.webp",
+      image: "/images/amin.jpg",
     },
     // Gym specialty
     {
@@ -289,7 +289,7 @@ const SpecialtiesSection = () => {
           {/* Coming Soon Badge */}
           <div className="absolute top-3 right-3 z-10">
             <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg animate-bounce">
-              2026
+              2027
             </div>
           </div>
           
@@ -324,7 +324,7 @@ const SpecialtiesSection = () => {
               <div className="text-center mb-4">
                 <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-lg p-4 border border-purple-500/30">
                   <div className="text-white text-2xl font-bebas mb-2">
-                    01/06/2026
+                    05/05/2027
                   </div>
                   <div className="text-gray-300 text-sm mb-2">
                     نعمل على إعداد شيء مميز لكم
@@ -343,7 +343,7 @@ const SpecialtiesSection = () => {
                 <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-full px-3 py-1.5 border border-purple-500/50">
                   <span className="text-xs text-purple-200 font-medium whitespace-nowrap flex items-center gap-1">
                     <Clock className="h-3 w-3" />
-                    قريباً في 2026
+                    قريباً في 2027
                   </span>
                 </div>
               </div>

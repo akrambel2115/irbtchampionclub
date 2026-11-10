@@ -181,13 +181,27 @@ const TrainersSection = () => {
       specialties: [t("trainer6.specialty1"), t("trainer6.specialty2")],
     },
     {
-      name: t("assistant1.name"),
-      title: t("assistant1.title"),
-      experience: "11 " + t("trainers.experience"),
-      image: "/images/seif.jpg",
-      imageScale: 'scale-110 md:scale-[1.15]',
-      achievements: [t("assistant1.achievement1")],
-      specialties: [t("assistant1.specialty1"), t("assistant1.specialty2")],
+      name: t("trainerHadjer.name"),
+      title: t("trainerHadjer.title"),
+      experience: "7 " + t("trainers.experience"),
+      image: "/images/hadjer.jpg",
+      imageScale: 'scale-105',
+      achievements: [t("trainerHadjer.achievement1"), t("trainerHadjer.achievement2")],
+      specialties: [t("trainerHadjer.specialty1")],
+    },
+    {
+      name: t("trainerAmine.name"),
+      title: t("trainerAmine.title"),
+      experience: "3 " + t("trainers.experience"),
+      image: "/images/amin.jpg",
+      imageScale: 'scale-105',
+      achievements: [
+        t("trainerAmine.achievement1"),
+        t("trainerAmine.achievement2"),
+        t("trainerAmine.achievement3"),
+        t("trainerAmine.achievement4"),
+      ],
+      specialties: [t("trainerAmine.specialty1")],
     }
   ], [t]);
 
@@ -307,27 +321,29 @@ const TrainersSection = () => {
           ))}
         </motion.div>
 
-        {/* Assistants row (2 centered) - wrapped and centered */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"} 
-          className="flex justify-center mb-12"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl">
-            {assistants.map((trainer, idx) => (
-              <TrainerCard
-                key={trainer.name}
-                trainer={trainer}
-                isMainTrainer={false}
-                orderClass=""
-                cardVariants={cardVariants}
-                glareTrigger={glareTriggers[idx + 1 + mainTrainers.length]}
-                t={t}
-              />
-            ))}
-          </div>
-        </motion.div>
+        {/* Assistants row (if any) */}
+        {assistants.length > 0 && (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"} 
+            className="flex justify-center mb-12"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl">
+              {assistants.map((trainer, idx) => (
+                <TrainerCard
+                  key={trainer.name}
+                  trainer={trainer}
+                  isMainTrainer={false}
+                  orderClass=""
+                  cardVariants={cardVariants}
+                  glareTrigger={glareTriggers[idx + 1 + mainTrainers.length]}
+                  t={t}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );

@@ -31,7 +31,7 @@ const RegisterSection = () => {
   const specialties = [
     t("specialty.boxing.title"),
     t("specialty.kickboxing.title"),
-    t("specialty.muayThai.title"),
+    t("specialty.judo.title"),
     t("specialty.mma.title"),
     t("specialty.fitness.man.title"),
     t("specialty.fitness.woman.title"),
@@ -155,7 +155,7 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
                 {t('register.form.title')}
               </CardTitle>
               <p className="font-bebas text-sm text-center text-gray-400 uppercase tracking-wide">
-                TI9A CHAMPION CLUB
+                KFG-SPORT
               </p>
             </CardHeader>
             <CardContent>

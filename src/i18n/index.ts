@@ -36,7 +36,7 @@ const resources = {
       
       // Trainer Data
       'trainer.name': 'أسامة طبيب',
-      'trainer.title': 'مدير أكاديمية TI9A و مدرب رئيسي',
+      'trainer.title': 'مدير أكاديمية KFG-SPORT و مدرب رئيسي',
       'trainer.achievement1': 'أصغر مدرب ملاكمة معترف به من الفيديرالية الجزائرية',
       'trainer.achievement2': 'متحصل على رخصة ملاكم محترف و أصغر مدرب وطني لأول مرة في تاريخ الرياضة القتالية',
       'trainer.achievement3': 'بطل تونس للملاكمة في فئة الهواة وزن 70كغ (2023)',
@@ -57,11 +57,19 @@ const resources = {
       'trainer3.name': 'وائل دعاس',
       'trainer3.title': 'مساعد مدرب',
 
-  'assistant1.name': 'سيف قيوش',
-  'assistant1.title': 'مدرب',
-  'assistant1.achievement1': 'بطل الجزائر 4 مرات فول كونتاكت والكيك بوكسينق',
-  'assistant1.specialty1': 'فول كونتاكت',
-  'assistant1.specialty2': 'كيك بوكسينق',
+      'trainerHadjer.name': 'خلاف هاجر',
+      'trainerHadjer.title': 'مدربة',
+      'trainerHadjer.achievement1': 'بطلة الجزائر في الجوجيتسو',
+      'trainerHadjer.achievement2': 'بطلة ولاية باتنة',
+      'trainerHadjer.specialty1': 'جوجيتسو',
+
+      'trainerAmine.name': 'أمين بوتي الحواس',
+      'trainerAmine.title': 'مدرب',
+      'trainerAmine.achievement1': 'حاصل على شهادة تدريب في رياضة الجيدو',
+      'trainerAmine.achievement2': 'بطل الجزائر في الجيدو',
+      'trainerAmine.achievement3': 'بطل دورة مفتوحة في تونس',
+      'trainerAmine.achievement4': 'بطل الالعاب في الجامعة',
+      'trainerAmine.specialty1': 'جيدو',
 
   'trainer5.name': 'سداح عقبة',
   'trainer5.title': 'مدرب',
@@ -134,12 +142,12 @@ const resources = {
       'specialty.kickboxing.feature3': 'التكييف',
       'specialty.kickboxing.feature4': 'الدفاع عن النفس',
       
-      'specialty.muayThai.title': 'المواي تاي',
-      'specialty.muayThai.description': 'تدرّب على فن الأطراف الثمانية — الكوع، الركبة، القبضات، والساقين.',
-      'specialty.muayThai.feature1': 'عمل الإمساك',
-      'specialty.muayThai.feature2': 'ضربات المرفق والركبة',
-      'specialty.muayThai.feature3': 'التقنيات التقليدية',
-      'specialty.muayThai.feature4': 'القوة العقلية',
+      'specialty.judo.title': 'الجيدو',
+      'specialty.judo.description': 'فن المرونة والدفاع عن النفس، يعتمد على تقنيات الرمي والسيطرة وتطوير التوازن والتركيز العالي.',
+      'specialty.judo.feature1': 'تقنيات الرمي والإسقاط',
+      'specialty.judo.feature2': 'السيطرة الأرضية والتثبيت',
+      'specialty.judo.feature3': 'تطوير القوة والمرونة والرشاقة',
+      'specialty.judo.feature4': 'الدفاع عن النفس والانضباط العالي',
       
       'specialty.gym.title': 'كمال الأجسام',
       'specialty.gym.description': '',
@@ -279,7 +287,7 @@ const resources = {
   'terms.contentResponsibilityDesc': 'المطور غير مسؤول عن أي معلومات أو محتوى منشور على هذا الموقع. جميع المعلومات والمحتويات مقدمة ومسؤولة عنها إدارة النادي/مالك الموقع.',
   'terms.lastUpdated': 'آخر تحديث: 12-09-2025',
 
-      'footer.description': 'تدريب احترافي في الفنون القتالية و اللياقة البدنية، إنضم إلى عالم المحاربين معنا TI9A',
+      'footer.description': 'تدريب احترافي في الفنون القتالية و اللياقة البدنية، إنضم إلى عالم المحاربين معنا KFG-SPORT',
       'footer.quickLinks': 'روابط سريعة',
       'footer.trainingPrograms': 'برامج التدريب',
       'footer.trainingHours': 'ساعات التدريب',
@@ -295,13 +303,6 @@ const resources = {
       'footer.by': 'بواسطة',
       'footer.privacyPolicy': 'سياسة الخصوصية',
       'footer.terms': 'شروط الخدمة',
-  // External link confirmation
-  'externalDisclaimer.title': 'تنبيه قبل الانتقال',
-  'externalDisclaimer.description': 'أنت على وشك الخروج إلى موقع خارجي (إنستغرام: Divnest). قبل المتابعة، يرجى ملاحظة ما يلي:',
-  'externalDisclaimer.ownerProvided': 'جميع المعلومات في هذا الموقع مقدمة ومسؤولة عنها إدارة النادي/مالك الموقع.',
-  'externalDisclaimer.noResponsibility': 'المطور غير مسؤول عن أي معلومات منشورة هنا أو تبعات استخدامها.',
-  'externalDisclaimer.accept': 'قرأتُ وأفهم — متابعة',
-  'externalDisclaimer.cancel': 'البقاء في الموقع',
       
       // Days
       'monday': 'الاثنين',
@@ -382,7 +383,7 @@ const resources = {
 
       // Trainer Data
       'trainer.name': 'Oussama Tabib',
-      'trainer.title': 'Head Trainer at TI9A Academy',
+      'trainer.title': 'Head Trainer at KFG-SPORT Academy',
       'trainer.achievement1': 'Youngest recognized trainer in Algeria',
       'trainer.achievement2': 'Obtained an official license as a boxer from the Algerian Boxing Federation',
       'trainer.achievement3': 'Tunisian Boxing Champion in the amateur category, 70kg (2023)',
@@ -404,11 +405,19 @@ const resources = {
       'trainer3.name': 'Wael Daas',
       'trainer3.title': 'Assistant Coach',
 
-  'assistant1.name': 'Seif Kayouch',
-  'assistant1.title': 'Kickboxing Coach',
-  'assistant1.achievement1': '4-time Algerian Full Contact and Kickboxing Champion',
-  'assistant1.specialty1': 'Full Contact',
-  'assistant1.specialty2': 'Kickboxing',
+      'trainerHadjer.name': 'Khellaf Hadjer',
+      'trainerHadjer.title': 'Coach',
+      'trainerHadjer.achievement1': 'Algerian Jiu-Jitsu Champion',
+      'trainerHadjer.achievement2': 'Batna State Champion',
+      'trainerHadjer.specialty1': 'Jiu-Jitsu',
+
+      'trainerAmine.name': 'Amine Bouti El Houas',
+      'trainerAmine.title': 'Coach',
+      'trainerAmine.achievement1': 'Certified Judo Coach Diploma',
+      'trainerAmine.achievement2': 'Algerian Judo Champion',
+      'trainerAmine.achievement3': 'Tunisia Open Tournament Champion',
+      'trainerAmine.achievement4': 'University Games Champion',
+      'trainerAmine.specialty1': 'Judo',
 
   'trainer5.name': 'Sdah Okba',
   'trainer5.title': 'Coach',
@@ -479,12 +488,12 @@ const resources = {
       'specialty.kickboxing.feature3': 'Conditioning',
       'specialty.kickboxing.feature4': 'Self Defense',
 
-      'specialty.muayThai.title': 'Muay Thai',
-      'specialty.muayThai.description': 'Train the art of 8 limbs using fists, elbows, knees, and shins.',
-      'specialty.muayThai.feature1': 'Clinch Work',
-      'specialty.muayThai.feature2': 'Elbow & Knee Strikes',
-      'specialty.muayThai.feature3': 'Traditional Techniques',
-      'specialty.muayThai.feature4': 'Mental Toughness',
+      'specialty.judo.title': 'Judo',
+      'specialty.judo.description': 'The gentle way of martial arts focusing on dynamic throws, takedowns, balance, and ground control.',
+      'specialty.judo.feature1': 'Throwing Techniques',
+      'specialty.judo.feature2': 'Ground Grappling & Pins',
+      'specialty.judo.feature3': 'Agility, Flexibility & Balance',
+      'specialty.judo.feature4': 'Self-Defense & Mental Discipline',
 
       'specialty.gym.title': 'gym',
       'specialty.gym.description': 'Build ground control, submissions, and takedown efficiency.',
@@ -531,7 +540,7 @@ const resources = {
       'gallery.view': 'View',
 
       // Registration Section
-      'register.title': 'JOIN TI9A Champion CLUB',
+      'register.title': 'JOIN KFG-SPORT',
       'register.description': 'Take your first step to transformation. Fill the form and join the club.',
       'register.firstName': 'First Name',
       'register.lastName': 'Last Name',
@@ -618,7 +627,7 @@ const resources = {
   'terms.contentResponsibilityTitle': 'Content Responsibility',
   'terms.contentResponsibilityDesc': 'The developer is not responsible for any information or content published on this site. All information and content are provided by and are the sole responsibility of the site owner/club management.',
   'terms.lastUpdated': 'Last updated: 12-09-2025',
-      'footer.description': 'TI9A Champion Club offers professional training in martial arts and fitness. Join a passionate community of fighters.',
+      'footer.description': 'KFG-SPORT offers professional training in martial arts and fitness. Join a passionate community of fighters.',
       'footer.quickLinks': 'Quick Links',
       'footer.trainingPrograms': 'Training Programs',
       'footer.trainingHours': 'Training Hours',
@@ -634,13 +643,6 @@ const resources = {
       'footer.by': 'by',
       'footer.privacyPolicy': 'Privacy Policy',
       'footer.terms': 'Terms of Service',
-  // External link confirmation
-  'externalDisclaimer.title': 'Before you go',
-  'externalDisclaimer.description': 'You are about to leave to an external site (Instagram: Divnest). Before proceeding, please note:',
-  'externalDisclaimer.ownerProvided': 'All information on this website is provided by and is the responsibility of the website owner/club management.',
-  'externalDisclaimer.noResponsibility': 'The developer is not responsible for any information published here or any consequences of its use.',
-  'externalDisclaimer.accept': 'I have read and understand — Continue',
-  'externalDisclaimer.cancel': 'Stay on site',
 
       // Days
       'monday': 'Monday',
